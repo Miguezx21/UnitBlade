@@ -2,8 +2,13 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!78 &1
 TagManager:
-  serializedVersion: 2
-  tags: []
+  serializedVersion: 3
+  tags:
+  - Player
+  - Enemy
+  - Boss
+  - Interactable
+  - Collectible
   layers:
   - Default
   - TransparentFX
@@ -13,10 +18,10 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
+  - Ground
+  - Platform
+  - Player
+  - Enemy
   - 
   - 
   - 
@@ -41,36 +46,26 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Background
+    uniqueID: 824124431
+    locked: 0
+  - name: Tilemap_BG
+    uniqueID: 2543217785
+    locked: 0
+  - name: Tilemap_Ground
+    uniqueID: 2497722751
+    locked: 0
+  - name: ' Props'
+    uniqueID: 348218185
+    locked: 0
+  - name: Characters
+    uniqueID: 241383633
+    locked: 0
+  - name: Enemies
+    uniqueID: 772359507
+    locked: 0
+  - name: HUD
+    uniqueID: 4200603707
+    locked: 0
   m_RenderingLayers:
   - Default
-  - Light Layer 1
-  - Light Layer 2
-  - Light Layer 3
-  - Light Layer 4
-  - Light Layer 5
-  - Light Layer 6
-  - Light Layer 7
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
