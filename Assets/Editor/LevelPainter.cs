@@ -88,10 +88,16 @@ public static class LevelPainter
         if (parent != null && parent.GetComponent<Grid>() == null)
             parent.gameObject.AddComponent<Grid>();
 
-        var tm = go.GetComponent<Tilemap>() ?? go.AddComponent<Tilemap>();
-        var tr = go.GetComponent<TilemapRenderer>() ?? go.AddComponent<TilemapRenderer>();
+        var tm = go.GetComponent<Tilemap>();
+        if (tm == null) tm = go.AddComponent<Tilemap>();
+
+        var tr = go.GetComponent<TilemapRenderer>();
+        if (tr == null) tr = go.AddComponent<TilemapRenderer>();
         tr.sortingOrder = sortingOrder;
-        if (go.GetComponent<TilemapCollider2D>() == null) go.AddComponent<TilemapCollider2D>();
+
+        if (go.GetComponent<TilemapCollider2D>() == null)
+            go.AddComponent<TilemapCollider2D>();
+
         return tm;
     }
 
