@@ -5,58 +5,64 @@ using UnityEditor.SceneManagement;
 
 /// <summary>
 /// Pintado automático de niveles desde el menú Tools/UnitBlade.
-/// Usa los atlas atlas_floor.png (suelo) y atlas_walls.png (plataformas).
 /// </summary>
 public static class LevelPainter
 {
-    const string FLOOR_PATH = "Assets/Art/Tilesets/Castle/atlas_floor.png";
-    const string WALL_PATH  = "Assets/Art/Tilesets/Castle/atlas_walls.png";
-    const string FLOOR_SPRITE = "atlas_floor_24"; // baldosa central
-    const string WALL_SPRITE  = "atlas_walls_13"; // ladrillo
-
-    [MenuItem("Tools/UnitBlade/Pintar Level 1")]
+    [MenuItem("Tools/UnitBlade/Pintar Level 1 (Castillo)")]
     public static void PaintLevel1()
+    {
+        Paint(
+            "Assets/Art/Tilesets/Castle/atlas_floor.png", "atlas_floor_24",
+            "Assets/Art/Tilesets/Castle/atlas_walls.png", "atlas_walls_13");
+    }
+
+    [MenuItem("Tools/UnitBlade/Pintar Level 2 (Bosque)")]
+    public static void PaintLevel2()
+    {
+        Paint(
+            "Assets/Art/Tilesets/Forest/Floor_04.png", "Floor_04",
+            "Assets/Art/Tilesets/Forest/Floor_04.png", "Floor_04");
+    }
+
+    static void Paint(string floorPath, string floorSprite, string wallPath, string wallSprite)
     {
         var ground = EnsureTilemap("Tilemap_Ground", 8, 0);
         var plat   = EnsureTilemap("Tilemap_Platforms", 9, 1);
         if (ground == null || plat == null)
         {
-            Debug.LogError("[LevelPainter] No se encontró Tilemap_Ground o Tilemap_Platforms en la escena.");
+            Debug.LogError("[LevelPainter] No se encontró Tilemap_Ground o Tilemap_Platforms en la escena activa.");
             return;
         }
 
-        var floorTile = MakeTile(GetSprite(FLOOR_PATH, FLOOR_SPRITE), "FloorTile");
-        var wallTile  = MakeTile(GetSprite(WALL_PATH,  WALL_SPRITE),  "WallTile");
+        var floorTile = MakeTile(GetSprite(floorPath, floorSprite), "FloorTile");
+        var wallTile  = MakeTile(GetSprite(wallPath, wallSprite), "WallTile");
         if (floorTile == null || wallTile == null)
         {
-            Debug.LogError("[LevelPainter] No se pudieron cargar los sprites de los atlas. ¿Importaste atlas_floor.png y atlas_walls.png?");
+            Debug.LogError("[LevelPainter] No se cargaron los sprites. Revisa que las texturas estén importadas como Sprite.");
             return;
         }
 
         ground.ClearAllTiles();
         plat.ClearAllTiles();
 
-        // --- SUELO continuo de x=-6 a x=92, top en y=0 (celdas y=-1..-4) ---
+        // Suelo continuo x=-6..92, top en y=0 (celdas y=-1..-4)
         FillRect(ground, floorTile, -6, 92, -4, -1);
+        // Huecos para saltar
+        ClearRect(ground, 26, 29, -1, 0);
+        ClearRect(ground, 50, 53, -1, 0);
 
-        // --- Algunos huecos (saltos) para dar plataformeo ---
-        ClearRect(ground, 26, 29, -1, 0);   // hueco 1
-        ClearRect(ground, 50, 53, -1, 0);   // hueco 2
-
-        // --- PLATAFORMAS flotantes ---
-        FillRect(plat, wallTile, 16, 23, 5, 5);   // plataforma para Ignis_02 (20, 6.5)
-        FillRect(plat, wallTile, 26, 30, 2, 2);   // escalón sobre hueco 1
-        FillRect(plat, wallTile, 44, 51, 3, 3);   // plataforma cofre/runa
-        FillRect(plat, wallTile, 64, 70, 4, 4);   // plataforma media
+        // Plataformas
+        FillRect(plat, wallTile, 16, 23, 5, 5);
+        FillRect(plat, wallTile, 26, 30, 2, 2);
+        FillRect(plat, wallTile, 44, 51, 3, 3);
+        FillRect(plat, wallTile, 64, 70, 4, 4);
 
         ground.CompressBounds();
         plat.CompressBounds();
 
         EditorSceneManager.MarkSceneDirty(EditorSceneManager.GetActiveScene());
-        Debug.Log("[LevelPainter] Level 1 pintado. Guarda con Ctrl+S.");
+        Debug.Log("[LevelPainter] Nivel pintado. Guarda con Ctrl+S.");
     }
-
-    // ---------- Helpers ----------
 
     static void FillRect(Tilemap tm, TileBase tile, int x0, int x1, int y0, int y1)
     {
@@ -78,21 +84,14 @@ public static class LevelPainter
         if (go == null) return null;
         go.layer = layer;
 
-        // Grid en el padre
         var parent = go.transform.parent;
         if (parent != null && parent.GetComponent<Grid>() == null)
             parent.gameObject.AddComponent<Grid>();
 
-        var tm = go.GetComponent<Tilemap>();
-        if (tm == null) tm = go.AddComponent<Tilemap>();
-
-        var tr = go.GetComponent<TilemapRenderer>();
-        if (tr == null) tr = go.AddComponent<TilemapRenderer>();
+        var tm = go.GetComponent<Tilemap>() ?? go.AddComponent<Tilemap>();
+        var tr = go.GetComponent<TilemapRenderer>() ?? go.AddComponent<TilemapRenderer>();
         tr.sortingOrder = sortingOrder;
-
-        var col = go.GetComponent<TilemapCollider2D>();
-        if (col == null) col = go.AddComponent<TilemapCollider2D>();
-
+        if (go.GetComponent<TilemapCollider2D>() == null) go.AddComponent<TilemapCollider2D>();
         return tm;
     }
 
@@ -118,6 +117,6 @@ public static class LevelPainter
                 if (s.name == spriteName) return s;
             }
         }
-        return first; // si no encuentra el nombre exacto, usa el primero
+        return first;
     }
 }
