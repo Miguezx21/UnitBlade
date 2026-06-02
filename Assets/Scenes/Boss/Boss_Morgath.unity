@@ -93,6 +93,7 @@ GameObject:
   - component: {fileID: 1559687382}
   - component: {fileID: 1559687381}
   - component: {fileID: 1559687380}
+  - component: {fileID: 1559687390}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -387,6 +388,7 @@ GameObject:
   - component: {fileID: 420100003}
   - component: {fileID: 420100004}
   - component: {fileID: 420100005}
+  - component: {fileID: 420100007}
   m_Layer: 10
   m_Name: Kaelen
   m_TagString: Player
@@ -525,6 +527,7 @@ GameObject:
   - component: {fileID: 600100003}
   - component: {fileID: 600100004}
   - component: {fileID: 600100005}
+  - component: {fileID: 600100009}
   m_Layer: 11
   m_Name: Morgath
   m_TagString: Boss
@@ -723,6 +726,53 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &420100007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 420100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1da0000000000000000000000000014a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 6
+  jumpForce: 12
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 768
+  groundCheck: {fileID: 0}
+  groundRadius: 0.25
+--- !u!114 &1559687390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1559687379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1da0000000000000000000000000015a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  smooth: 5
+  offset: {x: 0, y: 1, z: -10}
+--- !u!114 &600100009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 600100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1da0000000000000000000000000017a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  switchInterval: 3
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
