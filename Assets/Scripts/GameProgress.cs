@@ -33,7 +33,9 @@ public class GameProgress : MonoBehaviour
         }
         Instance = this;
         DontDestroyOnLoad(gameObject);
-        Load();
+        // Inicio limpio cada sesión: el jugador comienza sin runas y las recoge jugando.
+        PlayerPrefs.DeleteKey(SaveKey);
+        runes.Clear();
     }
 
     public bool HasRune(string id)

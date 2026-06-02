@@ -48,16 +48,36 @@ public class PlayerStats : MonoBehaviour
         OnChanged?.Invoke();
     }
 
+    /// <summary>Pira está disponible desde el inicio; el resto se desbloquea al recoger su runa.</summary>
+    public bool IsUnlocked(ElementType e)
+    {
+        if (e == ElementType.Pira) return true;
+        return GameProgress.Instance != null && GameProgress.Instance.HasRune(e.ToString());
+    }
+
     public void SetElement(ElementType e)
     {
+        if (!IsUnlocked(e))
+        {
+            Debug.Log("[UnitBlade] Elemento bloqueado: " + e + " (necesitas su runa).");
+            return;
+        }
         CurrentElement = e;
         OnChanged?.Invoke();
     }
 
     public void CycleElement()
     {
-        CurrentElement = (ElementType)(((int)CurrentElement + 1) % 4);
-        OnChanged?.Invoke();
+        for (int i = 1; i <= 4; i++)
+        {
+            var next = (ElementType)(((int)CurrentElement + i) % 4);
+            if (IsUnlocked(next))
+            {
+                CurrentElement = next;
+                OnChanged?.Invoke();
+                return;
+            }
+        }
     }
 
     public static Color ColorOf(ElementType e)

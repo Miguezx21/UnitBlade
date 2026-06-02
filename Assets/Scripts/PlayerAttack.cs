@@ -48,9 +48,11 @@ public class PlayerAttack : MonoBehaviour
             ? PlayerStats.Instance.CurrentElement
             : ElementType.Pira;
 
-        var hits = Physics2D.OverlapCircleAll(center, range * 0.6f, enemyMask);
+        // Sin LayerMask (robusto): detecta todo y filtra por tag + Health.
+        var hits = Physics2D.OverlapCircleAll(center, range * 0.6f);
         foreach (var h in hits)
         {
+            if (!h.CompareTag("Enemy") && !h.CompareTag("Boss")) continue;
             var hp = h.GetComponent<Health>();
             if (hp != null) hp.TakeDamage(damage, elem);
         }

@@ -121,14 +121,13 @@ public class HUDManager : MonoBehaviour
             if (elementText != null) elementText.text = ps.CurrentElement.ToString();
         }
 
-        var gp = GameProgress.Instance;
-        if (gp != null && runeSlots != null)
+        if (ps != null && runeSlots != null)
         {
             for (int i = 0; i < runeSlots.Length; i++)
             {
-                bool has = gp.HasRune(runeOrder[i]);
+                bool unlocked = ps.IsUnlocked((ElementType)i);
                 Color c = PlayerStats.ColorOf((ElementType)i);
-                c.a = has ? 1f : 0.22f;
+                c.a = unlocked ? 1f : 0.22f;
                 runeSlots[i].color = c;
             }
         }
