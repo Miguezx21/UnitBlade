@@ -11,7 +11,7 @@ public class PlayerStats : MonoBehaviour
 
     public int maxLives = 3;
     public int CurrentLives { get; private set; }
-    public ElementType CurrentElement { get; private set; } = ElementType.Pira;
+    public ElementType CurrentElement { get; private set; } = ElementType.Isa;
 
     /// <summary>Se dispara cuando cambian vidas o elemento (para refrescar el HUD).</summary>
     public event Action OnChanged;
@@ -51,7 +51,7 @@ public class PlayerStats : MonoBehaviour
     /// <summary>Pira está disponible desde el inicio; el resto se desbloquea al recoger su runa.</summary>
     public bool IsUnlocked(ElementType e)
     {
-        if (e == ElementType.Pira) return true;
+        if (e == ElementType.Isa) return true; // elemento inicial
         return GameProgress.Instance != null && GameProgress.Instance.HasRune(e.ToString());
     }
 
