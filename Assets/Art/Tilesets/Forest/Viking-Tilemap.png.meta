@@ -1,0 +1,2483 @@
+fileFormatVersion: 2
+guid: 4fdce1007db60d14fbbc56624e033fce
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2593433162204964684
+    second: Viking-Tilemap_0
+  - first:
+      213: -7142731543137022905
+    second: Viking-Tilemap_1
+  - first:
+      213: -6165886525061553773
+    second: Viking-Tilemap_2
+  - first:
+      213: 6031706560058583300
+    second: Viking-Tilemap_3
+  - first:
+      213: -6623268788058473586
+    second: Viking-Tilemap_4
+  - first:
+      213: -2732324270955458168
+    second: Viking-Tilemap_5
+  - first:
+      213: 4795441024692056459
+    second: Viking-Tilemap_6
+  - first:
+      213: 5264798250239842350
+    second: Viking-Tilemap_7
+  - first:
+      213: 8209095663506420704
+    second: Viking-Tilemap_8
+  - first:
+      213: 7405178688696443247
+    second: Viking-Tilemap_9
+  - first:
+      213: -918582465045429217
+    second: Viking-Tilemap_10
+  - first:
+      213: -4252289847908040155
+    second: Viking-Tilemap_11
+  - first:
+      213: 6079881520264289931
+    second: Viking-Tilemap_12
+  - first:
+      213: 1234227541254563585
+    second: Viking-Tilemap_13
+  - first:
+      213: 8319592669170623852
+    second: Viking-Tilemap_14
+  - first:
+      213: -1017578869155814675
+    second: Viking-Tilemap_15
+  - first:
+      213: -4266104907203324428
+    second: Viking-Tilemap_16
+  - first:
+      213: 5557518454873277663
+    second: Viking-Tilemap_17
+  - first:
+      213: -2235355754975451747
+    second: Viking-Tilemap_18
+  - first:
+      213: -6766128749632196360
+    second: Viking-Tilemap_19
+  - first:
+      213: 8016635820480898038
+    second: Viking-Tilemap_20
+  - first:
+      213: 2321719948278348017
+    second: Viking-Tilemap_21
+  - first:
+      213: -2423160998816545917
+    second: Viking-Tilemap_22
+  - first:
+      213: 4081294770999234812
+    second: Viking-Tilemap_23
+  - first:
+      213: -8259613193553152408
+    second: Viking-Tilemap_24
+  - first:
+      213: -6153432934551061160
+    second: Viking-Tilemap_25
+  - first:
+      213: 8886597779446598476
+    second: Viking-Tilemap_26
+  - first:
+      213: 3593421035181335917
+    second: Viking-Tilemap_27
+  - first:
+      213: -3725839457300214436
+    second: Viking-Tilemap_28
+  - first:
+      213: -6189975477564730967
+    second: Viking-Tilemap_29
+  - first:
+      213: -7268292842897135302
+    second: Viking-Tilemap_30
+  - first:
+      213: -5018226774491475714
+    second: Viking-Tilemap_31
+  - first:
+      213: 2711420610843590297
+    second: Viking-Tilemap_32
+  - first:
+      213: -617080798485089307
+    second: Viking-Tilemap_33
+  - first:
+      213: -8800058274575716189
+    second: Viking-Tilemap_34
+  - first:
+      213: -617396683790716193
+    second: Viking-Tilemap_35
+  - first:
+      213: -1650439919323938322
+    second: Viking-Tilemap_36
+  - first:
+      213: -6908423358132547332
+    second: Viking-Tilemap_37
+  - first:
+      213: -8644525931073633067
+    second: Viking-Tilemap_38
+  - first:
+      213: 1203426309765224321
+    second: Viking-Tilemap_39
+  - first:
+      213: -7982183460538048448
+    second: Viking-Tilemap_40
+  - first:
+      213: 73197845987985231
+    second: Viking-Tilemap_41
+  - first:
+      213: 8712546767853491006
+    second: Viking-Tilemap_42
+  - first:
+      213: -7130896143336402936
+    second: Viking-Tilemap_43
+  - first:
+      213: 747962111928127376
+    second: Viking-Tilemap_44
+  - first:
+      213: -3188758678903629165
+    second: Viking-Tilemap_45
+  - first:
+      213: -8618248828630457132
+    second: Viking-Tilemap_46
+  - first:
+      213: 7038599940269850528
+    second: Viking-Tilemap_47
+  - first:
+      213: 3892514251290652741
+    second: Viking-Tilemap_48
+  - first:
+      213: 8328566492335625829
+    second: Viking-Tilemap_49
+  - first:
+      213: -9005473480765353947
+    second: Viking-Tilemap_50
+  - first:
+      213: 6297854003850919369
+    second: Viking-Tilemap_51
+  - first:
+      213: 8319760797523896070
+    second: Viking-Tilemap_52
+  - first:
+      213: 5289077157242859896
+    second: Viking-Tilemap_53
+  - first:
+      213: 5562877531041823474
+    second: Viking-Tilemap_54
+  - first:
+      213: 6812736790210404091
+    second: Viking-Tilemap_55
+  - first:
+      213: -7914160723930319466
+    second: Viking-Tilemap_56
+  - first:
+      213: 1789405705798747503
+    second: Viking-Tilemap_57
+  - first:
+      213: 4874314402919524807
+    second: Viking-Tilemap_58
+  - first:
+      213: 1284158669833283246
+    second: Viking-Tilemap_59
+  - first:
+      213: 4368681590548770739
+    second: Viking-Tilemap_60
+  - first:
+      213: 6947854991347349271
+    second: Viking-Tilemap_61
+  - first:
+      213: 1342651081550761711
+    second: Viking-Tilemap_62
+  - first:
+      213: -6076556535075861144
+    second: Viking-Tilemap_63
+  - first:
+      213: 8723696960961995675
+    second: Viking-Tilemap_64
+  - first:
+      213: 5705113047488773168
+    second: Viking-Tilemap_65
+  - first:
+      213: -5936020495516867073
+    second: Viking-Tilemap_66
+  - first:
+      213: 334985771137539498
+    second: Viking-Tilemap_67
+  - first:
+      213: -2945861898437843307
+    second: Viking-Tilemap_68
+  - first:
+      213: 6089653919481553310
+    second: Viking-Tilemap_69
+  - first:
+      213: 8867448129516411178
+    second: Viking-Tilemap_70
+  - first:
+      213: 8850894215946847524
+    second: Viking-Tilemap_71
+  - first:
+      213: 4613499670087799838
+    second: Viking-Tilemap_72
+  - first:
+      213: 5807242372083465156
+    second: Viking-Tilemap_73
+  - first:
+      213: 8270407655518664419
+    second: Viking-Tilemap_74
+  - first:
+      213: -609983002643795886
+    second: Viking-Tilemap_75
+  - first:
+      213: -5547111692264539519
+    second: Viking-Tilemap_76
+  - first:
+      213: -6179128700345548143
+    second: Viking-Tilemap_77
+  - first:
+      213: -5055322701130524892
+    second: Viking-Tilemap_78
+  - first:
+      213: -102490573853475894
+    second: Viking-Tilemap_79
+  - first:
+      213: -8579042180747247481
+    second: Viking-Tilemap_80
+  - first:
+      213: 5905258847572884461
+    second: Viking-Tilemap_81
+  - first:
+      213: 472847988821158703
+    second: Viking-Tilemap_82
+  - first:
+      213: -801147106208914118
+    second: Viking-Tilemap_83
+  - first:
+      213: -2853879106187330794
+    second: Viking-Tilemap_84
+  - first:
+      213: 6076188232711675410
+    second: Viking-Tilemap_85
+  - first:
+      213: -6563203745348331422
+    second: Viking-Tilemap_86
+  - first:
+      213: -7970103418635649720
+    second: Viking-Tilemap_87
+  - first:
+      213: 8267775607384598970
+    second: Viking-Tilemap_88
+  - first:
+      213: -8133527478421505372
+    second: Viking-Tilemap_89
+  - first:
+      213: -9063951033578779881
+    second: Viking-Tilemap_90
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Viking-Tilemap_0
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 1193
+        width: 845
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b81e029746420cd0800000000000000
+      internalID: -2593433162204964684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Viking-Tilemap_1
+      rect:
+        serializedVersion: 2
+        x: 1735
+        y: 1187
+        width: 56
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 74c075d518befdc90800000000000000
+      internalID: -7142731543137022905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Viking-Tilemap_2
+      rect:
+        serializedVersion: 2
+        x: 2076
+        y: 1233
+        width: 273
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 391a65cafde5e6aa0800000000000000
+      internalID: -6165886525061553773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Viking-Tilemap_3
+      rect:
+        serializedVersion: 2
+        x: 3138
+        y: 946
+        width: 339
+        height: 363
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4096fa5b82de4b350800000000000000
+      internalID: 6031706560058583300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Viking-Tilemap_4
+      rect:
+        serializedVersion: 2
+        x: 2094
+        y: 1220
+        width: 239
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e8bb7dbf02c6514a0800000000000000
+      internalID: -6623268788058473586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Viking-Tilemap_5
+      rect:
+        serializedVersion: 2
+        x: 1340
+        y: 1173
+        width: 68
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88195825d85d41ad0800000000000000
+      internalID: -2732324270955458168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Viking-Tilemap_6
+      rect:
+        serializedVersion: 2
+        x: 2095
+        y: 1205
+        width: 254
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b81fa126434dc8240800000000000000
+      internalID: 4795441024692056459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Viking-Tilemap_7
+      rect:
+        serializedVersion: 2
+        x: 1808
+        y: 1170
+        width: 29
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e28d4af4d12501940800000000000000
+      internalID: 5264798250239842350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Viking-Tilemap_8
+      rect:
+        serializedVersion: 2
+        x: 2094
+        y: 1192
+        width: 239
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e3ff7623019ce170800000000000000
+      internalID: 8209095663506420704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Viking-Tilemap_9
+      rect:
+        serializedVersion: 2
+        x: 173
+        y: 1101
+        width: 589
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f616b0678ca74c660800000000000000
+      internalID: 7405178688696443247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Viking-Tilemap_10
+      rect:
+        serializedVersion: 2
+        x: 1345
+        y: 1132
+        width: 98
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f14801a6d1a8043f0800000000000000
+      internalID: -918582465045429217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Viking-Tilemap_11
+      rect:
+        serializedVersion: 2
+        x: 1464
+        y: 1104
+        width: 65
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5220175b9e4dcf4c0800000000000000
+      internalID: -4252289847908040155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Viking-Tilemap_12
+      rect:
+        serializedVersion: 2
+        x: 1574
+        y: 1103
+        width: 99
+        height: 82
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8e90d3b704106450800000000000000
+      internalID: 6079881520264289931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Viking-Tilemap_13
+      rect:
+        serializedVersion: 2
+        x: 1698
+        y: 1100
+        width: 61
+        height: 72
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1076b78d86bd02110800000000000000
+      internalID: 1234227541254563585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Viking-Tilemap_14
+      rect:
+        serializedVersion: 2
+        x: 1781
+        y: 1104
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c65ebd91471257370800000000000000
+      internalID: 8319592669170623852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Viking-Tilemap_15
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 1135
+        width: 191
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de2260de865d0e1f0800000000000000
+      internalID: -1017578869155814675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Viking-Tilemap_16
+      rect:
+        serializedVersion: 2
+        x: 2110
+        y: 1135
+        width: 123
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4f5589f8030cbc4c0800000000000000
+      internalID: -4266104907203324428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Viking-Tilemap_17
+      rect:
+        serializedVersion: 2
+        x: 2233
+        y: 1135
+        width: 234
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd44667f695402d40800000000000000
+      internalID: 5557518454873277663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Viking-Tilemap_18
+      rect:
+        serializedVersion: 2
+        x: 1365
+        y: 1040
+        width: 86
+        height: 84
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d952016c8cb6af0e0800000000000000
+      internalID: -2235355754975451747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Viking-Tilemap_19
+      rect:
+        serializedVersion: 2
+        x: 1916
+        y: 1116
+        width: 32
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f07d9d20c1e912a0800000000000000
+      internalID: -6766128749632196360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Viking-Tilemap_20
+      rect:
+        serializedVersion: 2
+        x: 1950
+        y: 1116
+        width: 125
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f3af650ecfc04f60800000000000000
+      internalID: 8016635820480898038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Viking-Tilemap_21
+      rect:
+        serializedVersion: 2
+        x: 2074
+        y: 1116
+        width: 159
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f8b111fdf7683020800000000000000
+      internalID: 2321719948278348017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Viking-Tilemap_22
+      rect:
+        serializedVersion: 2
+        x: 2233
+        y: 1116
+        width: 190
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 38385f7f8e33f5ed0800000000000000
+      internalID: -2423160998816545917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Viking-Tilemap_23
+      rect:
+        serializedVersion: 2
+        x: 2423
+        y: 1116
+        width: 31
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf0911978fba3a830800000000000000
+      internalID: 4081294770999234812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Viking-Tilemap_24
+      rect:
+        serializedVersion: 2
+        x: 2454
+        y: 1116
+        width: 19
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8667220df85ff5d80800000000000000
+      internalID: -8259613193553152408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Viking-Tilemap_25
+      rect:
+        serializedVersion: 2
+        x: 1233
+        y: 1054
+        width: 94
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85df4ea295d9a9aa0800000000000000
+      internalID: -6153432934551061160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Viking-Tilemap_26
+      rect:
+        serializedVersion: 2
+        x: 1572
+        y: 1038
+        width: 93
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4b80b1e899835b70800000000000000
+      internalID: 8886597779446598476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Viking-Tilemap_27
+      rect:
+        serializedVersion: 2
+        x: 1978
+        y: 1075
+        width: 132
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d65666a84656ed130800000000000000
+      internalID: 3593421035181335917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Viking-Tilemap_28
+      rect:
+        serializedVersion: 2
+        x: 2138
+        y: 1077
+        width: 220
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5d8c7101c82b4cc0800000000000000
+      internalID: -3725839457300214436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Viking-Tilemap_29
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 1037
+        width: 698
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a1106b591ac81aa0800000000000000
+      internalID: -6189975477564730967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Viking-Tilemap_30
+      rect:
+        serializedVersion: 2
+        x: 1726
+        y: 1001
+        width: 66
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a392a9f1b26d12b90800000000000000
+      internalID: -7268292842897135302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Viking-Tilemap_31
+      rect:
+        serializedVersion: 2
+        x: 2013
+        y: 1063
+        width: 343
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef0d418165dab5ab0800000000000000
+      internalID: -5018226774491475714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Viking-Tilemap_32
+      rect:
+        serializedVersion: 2
+        x: 1990
+        y: 1036
+        width: 117
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 99e310a0ea6e0a520800000000000000
+      internalID: 2711420610843590297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Viking-Tilemap_33
+      rect:
+        serializedVersion: 2
+        x: 2114
+        y: 1038
+        width: 57
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e3f4908840bf67f0800000000000000
+      internalID: -617080798485089307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Viking-Tilemap_34
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 982
+        width: 720
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a07d2dbf99efd580800000000000000
+      internalID: -8800058274575716189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Viking-Tilemap_35
+      rect:
+        serializedVersion: 2
+        x: 1336
+        y: 911
+        width: 129
+        height: 86
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd27629bcf09e67f0800000000000000
+      internalID: -617396683790716193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Viking-Tilemap_36
+      rect:
+        serializedVersion: 2
+        x: 1543
+        y: 982
+        width: 153
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ee1829543a57819e0800000000000000
+      internalID: -1650439919323938322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Viking-Tilemap_37
+      rect:
+        serializedVersion: 2
+        x: 1711
+        y: 971
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf09f74ee895020a0800000000000000
+      internalID: -6908423358132547332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Viking-Tilemap_38
+      rect:
+        serializedVersion: 2
+        x: 1736
+        y: 971
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d404b26779780880800000000000000
+      internalID: -8644525931073633067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Viking-Tilemap_39
+      rect:
+        serializedVersion: 2
+        x: 1771
+        y: 968
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1875aea4add63b010800000000000000
+      internalID: 1203426309765224321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Viking-Tilemap_40
+      rect:
+        serializedVersion: 2
+        x: 1806
+        y: 934
+        width: 58
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 040a1ae1f66993190800000000000000
+      internalID: -7982183460538048448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Viking-Tilemap_41
+      rect:
+        serializedVersion: 2
+        x: 2019
+        y: 965
+        width: 144
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4700789d0d040100800000000000000
+      internalID: 73197845987985231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Viking-Tilemap_42
+      rect:
+        serializedVersion: 2
+        x: 1712
+        y: 953
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e3392e2df1f29e870800000000000000
+      internalID: 8712546767853491006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Viking-Tilemap_43
+      rect:
+        serializedVersion: 2
+        x: 1737
+        y: 953
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8001b3e1db7f90d90800000000000000
+      internalID: -7130896143336402936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Viking-Tilemap_44
+      rect:
+        serializedVersion: 2
+        x: 1771
+        y: 950
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09f4de2f39b416a00800000000000000
+      internalID: 747962111928127376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Viking-Tilemap_45
+      rect:
+        serializedVersion: 2
+        x: 266
+        y: 921
+        width: 430
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39a518550e04fb3d0800000000000000
+      internalID: -3188758678903629165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Viking-Tilemap_46
+      rect:
+        serializedVersion: 2
+        x: 921
+        y: 750
+        width: 205
+        height: 199
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d42e8f0a54d56880800000000000000
+      internalID: -8618248828630457132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Viking-Tilemap_47
+      rect:
+        serializedVersion: 2
+        x: 1689
+        y: 840
+        width: 25
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0afbed38a512ea160800000000000000
+      internalID: 7038599940269850528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Viking-Tilemap_48
+      rect:
+        serializedVersion: 2
+        x: 1734
+        y: 889
+        width: 26
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 540335f861df40630800000000000000
+      internalID: 3892514251290652741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Viking-Tilemap_49
+      rect:
+        serializedVersion: 2
+        x: 1767
+        y: 887
+        width: 21
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 566d2ef1913059370800000000000000
+      internalID: 8328566492335625829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Viking-Tilemap_50
+      rect:
+        serializedVersion: 2
+        x: 2031
+        y: 930
+        width: 114
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 520d7c01591260380800000000000000
+      internalID: -9005473480765353947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Viking-Tilemap_51
+      rect:
+        serializedVersion: 2
+        x: 1558
+        y: 846
+        width: 32
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9cd3eca59d8766750800000000000000
+      internalID: 6297854003850919369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Viking-Tilemap_52
+      rect:
+        serializedVersion: 2
+        x: 1605
+        y: 846
+        width: 32
+        height: 52
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 607e1a88d5ab57370800000000000000
+      internalID: 8319760797523896070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Viking-Tilemap_53
+      rect:
+        serializedVersion: 2
+        x: 1810
+        y: 858
+        width: 18
+        height: 68
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 871f71bd6a3966940800000000000000
+      internalID: 5289077157242859896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Viking-Tilemap_54
+      rect:
+        serializedVersion: 2
+        x: 2049
+        y: 891
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2faffbe14af433d40800000000000000
+      internalID: 5562877531041823474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Viking-Tilemap_55
+      rect:
+        serializedVersion: 2
+        x: 3287
+        y: 677
+        width: 181
+        height: 223
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bfed9b8e304bb8e50800000000000000
+      internalID: 6812736790210404091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Viking-Tilemap_56
+      rect:
+        serializedVersion: 2
+        x: 1406
+        y: 827
+        width: 78
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 695f8caa0c04b2290800000000000000
+      internalID: -7914160723930319466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Viking-Tilemap_57
+      rect:
+        serializedVersion: 2
+        x: 2052
+        y: 868
+        width: 66
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f65013d320f35d810800000000000000
+      internalID: 1789405705798747503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Viking-Tilemap_58
+      rect:
+        serializedVersion: 2
+        x: 759
+        y: 747
+        width: 135
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7c9a69dcf1b05a340800000000000000
+      internalID: 4874314402919524807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Viking-Tilemap_59
+      rect:
+        serializedVersion: 2
+        x: 1562
+        y: 764
+        width: 66
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea6a6a6a18f32d110800000000000000
+      internalID: 1284158669833283246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Viking-Tilemap_60
+      rect:
+        serializedVersion: 2
+        x: 1741
+        y: 807
+        width: 37
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3bfa275a2cca0ac30800000000000000
+      internalID: 4368681590548770739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Viking-Tilemap_61
+      rect:
+        serializedVersion: 2
+        x: 1403
+        y: 782
+        width: 69
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 717fe26ad4dbb6060800000000000000
+      internalID: 6947854991347349271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Viking-Tilemap_62
+      rect:
+        serializedVersion: 2
+        x: 1347
+        y: 713
+        width: 18
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fee80258b0e02a210800000000000000
+      internalID: 1342651081550761711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Viking-Tilemap_63
+      rect:
+        serializedVersion: 2
+        x: 1375
+        y: 721
+        width: 26
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 86d893db60cbbaba0800000000000000
+      internalID: -6076556535075861144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Viking-Tilemap_64
+      rect:
+        serializedVersion: 2
+        x: 1426
+        y: 721
+        width: 17
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b936b467a2cc01970800000000000000
+      internalID: 8723696960961995675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Viking-Tilemap_65
+      rect:
+        serializedVersion: 2
+        x: 659
+        y: 659
+        width: 34
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03cb307f612ac2f40800000000000000
+      internalID: 5705113047488773168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Viking-Tilemap_66
+      rect:
+        serializedVersion: 2
+        x: 713
+        y: 628
+        width: 30
+        height: 80
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff567494fc40f9da0800000000000000
+      internalID: -5936020495516867073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Viking-Tilemap_67
+      rect:
+        serializedVersion: 2
+        x: 747
+        y: 651
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aad9675b8cb16a400800000000000000
+      internalID: 334985771137539498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Viking-Tilemap_68
+      rect:
+        serializedVersion: 2
+        x: 775
+        y: 648
+        width: 33
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 596214216323e17d0800000000000000
+      internalID: -2945861898437843307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Viking-Tilemap_69
+      rect:
+        serializedVersion: 2
+        x: 849
+        y: 645
+        width: 66
+        height: 56
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9163c3b9fbc28450800000000000000
+      internalID: 6089653919481553310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Viking-Tilemap_70
+      rect:
+        serializedVersion: 2
+        x: 929
+        y: 645
+        width: 31
+        height: 58
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a29170097118f0b70800000000000000
+      internalID: 8867448129516411178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Viking-Tilemap_71
+      rect:
+        serializedVersion: 2
+        x: 770
+        y: 434
+        width: 57
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42542163561b4da70800000000000000
+      internalID: 8850894215946847524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Viking-Tilemap_72
+      rect:
+        serializedVersion: 2
+        x: 3298
+        y: 487
+        width: 186
+        height: 165
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1417fea181760040800000000000000
+      internalID: 4613499670087799838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Viking-Tilemap_73
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 434
+        width: 31
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4cbb1a85b28779050800000000000000
+      internalID: 5807242372083465156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Viking-Tilemap_74
+      rect:
+        serializedVersion: 2
+        x: 582
+        y: 139
+        width: 148
+        height: 110
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e67cd6b1f366c270800000000000000
+      internalID: 8270407655518664419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Viking-Tilemap_75
+      rect:
+        serializedVersion: 2
+        x: 771
+        y: 127
+        width: 31
+        height: 265
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 250f360e0b7e887f0800000000000000
+      internalID: -609983002643795886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Viking-Tilemap_76
+      rect:
+        serializedVersion: 2
+        x: 810
+        y: 128
+        width: 47
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18af7254e43b403b0800000000000000
+      internalID: -5547111692264539519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Viking-Tilemap_77
+      rect:
+        serializedVersion: 2
+        x: 870
+        y: 127
+        width: 45
+        height: 158
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1928b7a7f235f3aa0800000000000000
+      internalID: -6179128700345548143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Viking-Tilemap_78
+      rect:
+        serializedVersion: 2
+        x: 933
+        y: 225
+        width: 12
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 427952e99c2e7d9b0800000000000000
+      internalID: -5055322701130524892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Viking-Tilemap_79
+      rect:
+        serializedVersion: 2
+        x: 977
+        y: 213
+        width: 87
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: acb33a8bd51e39ef0800000000000000
+      internalID: -102490573853475894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Viking-Tilemap_80
+      rect:
+        serializedVersion: 2
+        x: 1273
+        y: 154
+        width: 120
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 780c77f179e11f880800000000000000
+      internalID: -8579042180747247481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Viking-Tilemap_81
+      rect:
+        serializedVersion: 2
+        x: 918
+        y: 126
+        width: 41
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: deb705c62a1b3f150800000000000000
+      internalID: 5905258847572884461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Viking-Tilemap_82
+      rect:
+        serializedVersion: 2
+        x: 980
+        y: 129
+        width: 12
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2b61769db4ef8600800000000000000
+      internalID: 472847988821158703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Viking-Tilemap_83
+      rect:
+        serializedVersion: 2
+        x: 993
+        y: 129
+        width: 65
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a35e59993f0c1e4f0800000000000000
+      internalID: -801147106208914118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Viking-Tilemap_84
+      rect:
+        serializedVersion: 2
+        x: 1057
+        y: 134
+        width: 108
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61b7bcbc21cf468d0800000000000000
+      internalID: -2853879106187330794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Viking-Tilemap_85
+      rect:
+        serializedVersion: 2
+        x: 1178
+        y: 136
+        width: 32
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 21e103f2105f25450800000000000000
+      internalID: 6076188232711675410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Viking-Tilemap_86
+      rect:
+        serializedVersion: 2
+        x: 1220
+        y: 135
+        width: 44
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 268dff987f0dae4a0800000000000000
+      internalID: -6563203745348331422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Viking-Tilemap_87
+      rect:
+        serializedVersion: 2
+        x: 1398
+        y: 67
+        width: 92
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84d781d0b21846190800000000000000
+      internalID: -7970103418635649720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Viking-Tilemap_88
+      rect:
+        serializedVersion: 2
+        x: 1073
+        y: 89
+        width: 78
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ab96cc04c1a0db270800000000000000
+      internalID: 8267775607384598970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Viking-Tilemap_89
+      rect:
+        serializedVersion: 2
+        x: 1167
+        y: 91
+        width: 65
+        height: 31
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4aabec50ad7ef1f80800000000000000
+      internalID: -8133527478421505372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Viking-Tilemap_90
+      rect:
+        serializedVersion: 2
+        x: 1246
+        y: 57
+        width: 96
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 71b800ece80663280800000000000000
+      internalID: -9063951033578779881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Viking-Tilemap_0: -2593433162204964684
+      Viking-Tilemap_1: -7142731543137022905
+      Viking-Tilemap_10: -918582465045429217
+      Viking-Tilemap_11: -4252289847908040155
+      Viking-Tilemap_12: 6079881520264289931
+      Viking-Tilemap_13: 1234227541254563585
+      Viking-Tilemap_14: 8319592669170623852
+      Viking-Tilemap_15: -1017578869155814675
+      Viking-Tilemap_16: -4266104907203324428
+      Viking-Tilemap_17: 5557518454873277663
+      Viking-Tilemap_18: -2235355754975451747
+      Viking-Tilemap_19: -6766128749632196360
+      Viking-Tilemap_2: -6165886525061553773
+      Viking-Tilemap_20: 8016635820480898038
+      Viking-Tilemap_21: 2321719948278348017
+      Viking-Tilemap_22: -2423160998816545917
+      Viking-Tilemap_23: 4081294770999234812
+      Viking-Tilemap_24: -8259613193553152408
+      Viking-Tilemap_25: -6153432934551061160
+      Viking-Tilemap_26: 8886597779446598476
+      Viking-Tilemap_27: 3593421035181335917
+      Viking-Tilemap_28: -3725839457300214436
+      Viking-Tilemap_29: -6189975477564730967
+      Viking-Tilemap_3: 6031706560058583300
+      Viking-Tilemap_30: -7268292842897135302
+      Viking-Tilemap_31: -5018226774491475714
+      Viking-Tilemap_32: 2711420610843590297
+      Viking-Tilemap_33: -617080798485089307
+      Viking-Tilemap_34: -8800058274575716189
+      Viking-Tilemap_35: -617396683790716193
+      Viking-Tilemap_36: -1650439919323938322
+      Viking-Tilemap_37: -6908423358132547332
+      Viking-Tilemap_38: -8644525931073633067
+      Viking-Tilemap_39: 1203426309765224321
+      Viking-Tilemap_4: -6623268788058473586
+      Viking-Tilemap_40: -7982183460538048448
+      Viking-Tilemap_41: 73197845987985231
+      Viking-Tilemap_42: 8712546767853491006
+      Viking-Tilemap_43: -7130896143336402936
+      Viking-Tilemap_44: 747962111928127376
+      Viking-Tilemap_45: -3188758678903629165
+      Viking-Tilemap_46: -8618248828630457132
+      Viking-Tilemap_47: 7038599940269850528
+      Viking-Tilemap_48: 3892514251290652741
+      Viking-Tilemap_49: 8328566492335625829
+      Viking-Tilemap_5: -2732324270955458168
+      Viking-Tilemap_50: -9005473480765353947
+      Viking-Tilemap_51: 6297854003850919369
+      Viking-Tilemap_52: 8319760797523896070
+      Viking-Tilemap_53: 5289077157242859896
+      Viking-Tilemap_54: 5562877531041823474
+      Viking-Tilemap_55: 6812736790210404091
+      Viking-Tilemap_56: -7914160723930319466
+      Viking-Tilemap_57: 1789405705798747503
+      Viking-Tilemap_58: 4874314402919524807
+      Viking-Tilemap_59: 1284158669833283246
+      Viking-Tilemap_6: 4795441024692056459
+      Viking-Tilemap_60: 4368681590548770739
+      Viking-Tilemap_61: 6947854991347349271
+      Viking-Tilemap_62: 1342651081550761711
+      Viking-Tilemap_63: -6076556535075861144
+      Viking-Tilemap_64: 8723696960961995675
+      Viking-Tilemap_65: 5705113047488773168
+      Viking-Tilemap_66: -5936020495516867073
+      Viking-Tilemap_67: 334985771137539498
+      Viking-Tilemap_68: -2945861898437843307
+      Viking-Tilemap_69: 6089653919481553310
+      Viking-Tilemap_7: 5264798250239842350
+      Viking-Tilemap_70: 8867448129516411178
+      Viking-Tilemap_71: 8850894215946847524
+      Viking-Tilemap_72: 4613499670087799838
+      Viking-Tilemap_73: 5807242372083465156
+      Viking-Tilemap_74: 8270407655518664419
+      Viking-Tilemap_75: -609983002643795886
+      Viking-Tilemap_76: -5547111692264539519
+      Viking-Tilemap_77: -6179128700345548143
+      Viking-Tilemap_78: -5055322701130524892
+      Viking-Tilemap_79: -102490573853475894
+      Viking-Tilemap_8: 8209095663506420704
+      Viking-Tilemap_80: -8579042180747247481
+      Viking-Tilemap_81: 5905258847572884461
+      Viking-Tilemap_82: 472847988821158703
+      Viking-Tilemap_83: -801147106208914118
+      Viking-Tilemap_84: -2853879106187330794
+      Viking-Tilemap_85: 6076188232711675410
+      Viking-Tilemap_86: -6563203745348331422
+      Viking-Tilemap_87: -7970103418635649720
+      Viking-Tilemap_88: 8267775607384598970
+      Viking-Tilemap_89: -8133527478421505372
+      Viking-Tilemap_9: 7405178688696443247
+      Viking-Tilemap_90: -9063951033578779881
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
