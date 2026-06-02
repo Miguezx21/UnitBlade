@@ -8969,6 +8969,7 @@ GameObject:
   - component: {fileID: 420100003}
   - component: {fileID: 420100004}
   - component: {fileID: 420100007}
+  - component: {fileID: 420100008}
   m_Layer: 10
   m_Name: Kaelen
   m_TagString: Player
@@ -9180,6 +9181,7 @@ GameObject:
   - component: {fileID: 511100002}
   - component: {fileID: 511100003}
   - component: {fileID: 511100004}
+  - component: {fileID: 511100008}
   m_Layer: 11
   m_Name: Ignis_01
   m_TagString: Enemy
@@ -9341,6 +9343,7 @@ GameObject:
   - component: {fileID: 521100002}
   - component: {fileID: 521100003}
   - component: {fileID: 521100004}
+  - component: {fileID: 521100008}
   m_Layer: 11
   m_Name: Ignis_02
   m_TagString: Enemy
@@ -9502,6 +9505,7 @@ GameObject:
   - component: {fileID: 531100002}
   - component: {fileID: 531100003}
   - component: {fileID: 531100004}
+  - component: {fileID: 531100008}
   m_Layer: 11
   m_Name: Ignis_03
   m_TagString: Enemy
@@ -9663,6 +9667,7 @@ GameObject:
   - component: {fileID: 541100002}
   - component: {fileID: 541100003}
   - component: {fileID: 541100004}
+  - component: {fileID: 541100008}
   m_Layer: 11
   m_Name: Boss_Ignis
   m_TagString: Boss
@@ -10381,6 +10386,84 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   requiredElement: 1
   visual: {fileID: 0}
+--- !u!114 &511100008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 511100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1da0000000000000000000000000018a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHP: 3
+  hasWeakness: 1
+  weakTo: 1
+--- !u!114 &521100008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 521100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1da0000000000000000000000000018a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHP: 3
+  hasWeakness: 1
+  weakTo: 1
+--- !u!114 &531100008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 531100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1da0000000000000000000000000018a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHP: 3
+  hasWeakness: 1
+  weakTo: 1
+--- !u!114 &541100008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 541100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1da0000000000000000000000000018a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHP: 8
+  hasWeakness: 1
+  weakTo: 1
+--- !u!114 &420100008
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 420100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1da0000000000000000000000000019a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
+  range: 1.4
+  cooldown: 0.4
+  enemyMask:
+    serializedVersion: 2
+    m_Bits: 2048
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
