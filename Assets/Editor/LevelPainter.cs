@@ -24,6 +24,14 @@ public static class LevelPainter
             "Assets/Art/Tilesets/Forest/Floor_04.png", "Floor_04");
     }
 
+    [MenuItem("Tools/UnitBlade/Pintar Level 3 (Cripta)")]
+    public static void PaintLevel3()
+    {
+        Paint(
+            "Assets/Art/Tilesets/Crypt/caverns_tiles.png", "caverns_tiles_33",
+            "Assets/Art/Tilesets/Crypt/caverns_tiles.png", "caverns_tiles_33");
+    }
+
     static void Paint(string floorPath, string floorSprite, string wallPath, string wallSprite)
     {
         var ground = EnsureTilemap("Tilemap_Ground", 8, 0);
