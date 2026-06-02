@@ -34,9 +34,10 @@ public class ElementalPuzzle : MonoBehaviour
         {
             solved = true;
             ApplyTint(0.08f);
-            var col = GetComponent<Collider2D>();
-            if (col != null) col.enabled = false;
-            Debug.Log("[UnitBlade] Puzzle resuelto con " + requiredElement + ".");
+            // desactiva TODOS los colliders (sólido + trigger) para dejar pasar
+            foreach (var col in GetComponents<Collider2D>())
+                col.enabled = false;
+            Debug.Log("[UnitBlade] Barrera disipada con " + requiredElement + ".");
         }
     }
 
