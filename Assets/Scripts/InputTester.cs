@@ -42,5 +42,15 @@ public class InputTester : MonoBehaviour
 
         if (kb.rKey.wasPressedThisFrame && GameProgress.Instance != null)
             GameProgress.Instance.ResetProgress();
+
+        // Tecla 0 (dev): desbloquea TODOS los elementos para probar
+        if (kb.digit0Key.wasPressedThisFrame && GameProgress.Instance != null)
+        {
+            GameProgress.Instance.CollectRune("Pira");
+            GameProgress.Instance.CollectRune("Isa");
+            GameProgress.Instance.CollectRune("Steinn");
+            GameProgress.Instance.CollectRune("Thorn");
+            Debug.Log("[UnitBlade] DEV: todos los elementos desbloqueados.");
+        }
     }
 }

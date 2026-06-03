@@ -20,19 +20,6 @@ public class HUDManager : MonoBehaviour
 
     private readonly string[] runeOrder = { "Pira", "Isa", "Steinn", "Thorn" };
 
-    private Sprite heartSprite;
-    private Sprite[] elementSprites; // Pira, Isa, Steinn, Thorn
-    private bool spritesLoaded;
-
-    private void LoadSprites()
-    {
-        if (spritesLoaded) return;
-        spritesLoaded = true;
-        heartSprite = Resources.Load<Sprite>("HUD/heart");
-        elementSprites = new Sprite[4];
-        for (int i = 0; i < 4; i++)
-            elementSprites[i] = Resources.Load<Sprite>("HUD/" + runeOrder[i]);
-    }
 
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
     private static void Bootstrap()
@@ -149,14 +136,16 @@ public class HUDManager : MonoBehaviour
         go.transform.SetParent(parent, false);
         var t = go.AddComponent<Text>();
         t.font = font;
-        t.fontSize = 26;
+        t.fontSize = 44;
         t.fontStyle = FontStyle.Bold;
         t.alignment = TextAnchor.MiddleCenter;
+        t.horizontalOverflow = HorizontalWrapMode.Overflow;
+        t.verticalOverflow = VerticalWrapMode.Overflow;
         t.color = Color.white;
         t.text = txt;
         var rt = t.rectTransform;
         rt.anchorMin = rt.anchorMax = rt.pivot = anchor;
-        rt.sizeDelta = new Vector2(40, 30);
+        rt.sizeDelta = new Vector2(60, 50);
         rt.anchoredPosition = pos;
         return t;
     }
@@ -176,48 +165,41 @@ public class HUDManager : MonoBehaviour
 
     private void Refresh()
     {
-        LoadSprites();
         var ps = PlayerStats.Instance;
-        if (ps != null && hearts != null)
-        {
+        if (ps == null) return;
+
+        // Corazones (sprite ya asignado; solo cambia color vivo/perdido)
+        if (hearts != null)
             for (int i = 0; i < hearts.Length; i++)
             {
                 if (hearts[i] == null) continue;
-                if (heartSprite != null) hearts[i].sprite = heartSprite;
                 bool alive = i < ps.CurrentLives;
-                // con imagen de corazon: blanco = vivo, gris oscuro = perdido
-                hearts[i].color = alive
-                    ? Color.white
-                    : new Color(0.18f, 0.18f, 0.18f, 0.7f);
+                hearts[i].color = alive ? Color.white : new Color(0.15f, 0.15f, 0.15f, 0.6f);
             }
 
-            int e = (int)ps.CurrentElement;
-            if (elementIcon != null)
+        // Ranuras de runa + numeros (bloqueado = gris/tenue, desbloqueado = blanco)
+        if (runeSlots != null)
+            for (int i = 0; i < runeSlots.Length; i++)
             {
-                if (elementSprites != null && elementSprites[e] != null)
-                    elementIcon.sprite = elementSprites[e];
-                elementIcon.color = Color.white;
-            }
-            if (elementText != null) elementText.text = ps.CurrentElement.ToString();
+                if (runeSlots[i] == null) continue;
+                bool unlocked = ps.IsUnlocked((ElementType)i);
+                runeSlots[i].color = unlocked ? Color.white : new Color(0.35f, 0.35f, 0.35f, 0.6f);
 
-            if (runeSlots != null)
-                for (int i = 0; i < runeSlots.Length; i++)
+                if (runeNums != null && runeNums[i] != null)
                 {
-                    if (runeSlots[i] == null) continue;
-                    if (elementSprites != null && elementSprites[i] != null)
-                        runeSlots[i].sprite = elementSprites[i];
-                    bool unlocked = ps.IsUnlocked((ElementType)i);
-                    // imagen a color si desbloqueada; tenue si no
-                    runeSlots[i].color = unlocked ? Color.white : new Color(1f, 1f, 1f, 0.22f);
-
-                    if (runeNums != null && runeNums[i] != null)
-                    {
-                        runeNums[i].text = (i + 1).ToString();
-                        runeNums[i].color = unlocked
-                            ? Color.white
-                            : new Color(0.5f, 0.5f, 0.5f, 1f);
-                    }
+                    runeNums[i].text = (i + 1).ToString();
+                    runeNums[i].color = unlocked ? Color.white : new Color(0.4f, 0.4f, 0.4f, 1f);
                 }
+            }
+
+        // Icono del elemento activo: COPIA el sprite de su propia ranura (sin Resources)
+        int e = (int)ps.CurrentElement;
+        if (elementIcon != null && runeSlots != null && e >= 0 && e < runeSlots.Length
+            && runeSlots[e] != null && runeSlots[e].sprite != null)
+        {
+            elementIcon.sprite = runeSlots[e].sprite;
+            elementIcon.color = Color.white;
         }
+        if (elementText != null) elementText.text = ps.CurrentElement.ToString();
     }
 }
