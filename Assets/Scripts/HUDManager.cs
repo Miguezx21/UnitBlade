@@ -2,11 +2,10 @@ using UnityEngine;
 using UnityEngine.UI;
 
 /// <summary>
-/// Construye el HUD por código (sin assets de UI) y lo refresca de forma reactiva:
-///  - Corazones de vida (arriba izquierda)
-///  - Indicador del elemento activo de la espada (arriba centro)
-///  - Ranuras de runas recolectadas (arriba derecha)
-/// Se autocrea en cada escena.
+/// HUD reactivo: corazones, elemento activo y runas.
+/// Puede vivir como objetos REALES en la escena (editables) o autocrearse en
+/// runtime si no existe ninguno. Usa Tools/UnitBlade/Crear HUD en Escena para
+/// generarlo de forma editable.
 /// </summary>
 public class HUDManager : MonoBehaviour
 {
@@ -16,7 +15,6 @@ public class HUDManager : MonoBehaviour
     private Image[] runeSlots;
     private Image elementIcon;
     private Text elementText;
-    private Sprite squareSprite;
     private Font font;
 
     private readonly string[] runeOrder = { "Pira", "Isa", "Steinn", "Thorn" };
@@ -24,11 +22,10 @@ public class HUDManager : MonoBehaviour
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
     private static void Bootstrap()
     {
-        if (Instance == null)
-        {
-            var go = new GameObject("HUD");
-            go.AddComponent<HUDManager>();
-        }
+        // Si ya hay un HUD colocado en la escena, no creamos otro.
+        if (FindFirstObjectByType<HUDManager>() != null) return;
+        var go = new GameObject("HUD");
+        go.AddComponent<HUDManager>();
     }
 
     private void Awake()
@@ -38,10 +35,10 @@ public class HUDManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
 
         font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
-        squareSprite = Sprite.Create(Texture2D.whiteTexture,
-            new Rect(0, 0, 4, 4), new Vector2(0.5f, 0.5f));
 
-        BuildUI();
+        // Si el HUD ya está armado en la escena, lo usamos; si no, lo construimos.
+        if (!BindByName())
+            BuildUI(transform);
     }
 
     private void Update()
@@ -49,10 +46,43 @@ public class HUDManager : MonoBehaviour
         Refresh();
     }
 
-    private void BuildUI()
+    private bool BindByName()
     {
+        Transform canvas = transform.Find("HUDCanvas");
+        if (canvas == null)
+        {
+            var c = GameObject.Find("HUDCanvas");
+            if (c != null) canvas = c.transform;
+        }
+        if (canvas == null) return false;
+
+        hearts = new Image[3];
+        runeSlots = new Image[4];
+        for (int i = 0; i < 3; i++)
+        {
+            var t = canvas.Find("Heart" + i);
+            if (t != null) hearts[i] = t.GetComponent<Image>();
+        }
+        for (int i = 0; i < 4; i++)
+        {
+            var t = canvas.Find("Rune" + i);
+            if (t != null) runeSlots[i] = t.GetComponent<Image>();
+        }
+        var ei = canvas.Find("ElementIcon");
+        if (ei != null) elementIcon = ei.GetComponent<Image>();
+        var et = canvas.Find("ElementText");
+        if (et != null) elementText = et.GetComponent<Text>();
+
+        return hearts[0] != null;
+    }
+
+    /// <summary>Construye el HUD como objetos hijos (sirve en runtime y en editor).</summary>
+    public Canvas BuildUI(Transform parent)
+    {
+        if (font == null) font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
+
         var canvasGO = new GameObject("HUDCanvas");
-        canvasGO.transform.SetParent(transform);
+        canvasGO.transform.SetParent(parent, false);
         var canvas = canvasGO.AddComponent<Canvas>();
         canvas.renderMode = RenderMode.ScreenSpaceOverlay;
         canvas.sortingOrder = 100;
@@ -61,18 +91,16 @@ public class HUDManager : MonoBehaviour
         scaler.referenceResolution = new Vector2(1920, 1080);
         canvasGO.AddComponent<GraphicRaycaster>();
 
-        // Corazones (arriba izquierda)
         hearts = new Image[3];
         for (int i = 0; i < 3; i++)
-            hearts[i] = MakeIcon(canvasGO.transform, new Vector2(0, 1),
+            hearts[i] = MakeIcon(canvasGO.transform, "Heart" + i, new Vector2(0, 1),
                 new Vector2(70 + i * 80, -60), 64, Color.red);
 
-        // Indicador de elemento (arriba centro)
-        elementIcon = MakeIcon(canvasGO.transform, new Vector2(0.5f, 1),
+        elementIcon = MakeIcon(canvasGO.transform, "ElementIcon", new Vector2(0.5f, 1),
             new Vector2(0, -60), 72, Color.white);
 
         var txtGO = new GameObject("ElementText");
-        txtGO.transform.SetParent(canvasGO.transform);
+        txtGO.transform.SetParent(canvasGO.transform, false);
         elementText = txtGO.AddComponent<Text>();
         elementText.font = font;
         elementText.fontSize = 30;
@@ -84,19 +112,19 @@ public class HUDManager : MonoBehaviour
         rt.anchoredPosition = new Vector2(0, -110);
         rt.sizeDelta = new Vector2(360, 44);
 
-        // Ranuras de runas (arriba derecha)
         runeSlots = new Image[4];
         for (int i = 0; i < 4; i++)
-            runeSlots[i] = MakeIcon(canvasGO.transform, new Vector2(1, 1),
+            runeSlots[i] = MakeIcon(canvasGO.transform, "Rune" + i, new Vector2(1, 1),
                 new Vector2(-70 - i * 80, -60), 64, PlayerStats.ColorOf((ElementType)i));
+
+        return canvas;
     }
 
-    private Image MakeIcon(Transform parent, Vector2 anchor, Vector2 pos, float size, Color color)
+    private Image MakeIcon(Transform parent, string name, Vector2 anchor, Vector2 pos, float size, Color color)
     {
-        var go = new GameObject("Icon");
-        go.transform.SetParent(parent);
+        var go = new GameObject(name);
+        go.transform.SetParent(parent, false);
         var img = go.AddComponent<Image>();
-        img.sprite = squareSprite;
         img.color = color;
         var rt = img.rectTransform;
         rt.anchorMin = rt.anchorMax = rt.pivot = anchor;
@@ -112,6 +140,7 @@ public class HUDManager : MonoBehaviour
         {
             for (int i = 0; i < hearts.Length; i++)
             {
+                if (hearts[i] == null) continue;
                 bool alive = i < ps.CurrentLives;
                 hearts[i].color = alive
                     ? new Color(1f, 0.15f, 0.2f)
@@ -119,17 +148,16 @@ public class HUDManager : MonoBehaviour
             }
             if (elementIcon != null) elementIcon.color = PlayerStats.ColorOf(ps.CurrentElement);
             if (elementText != null) elementText.text = ps.CurrentElement.ToString();
-        }
 
-        if (ps != null && runeSlots != null)
-        {
-            for (int i = 0; i < runeSlots.Length; i++)
-            {
-                bool unlocked = ps.IsUnlocked((ElementType)i);
-                Color c = PlayerStats.ColorOf((ElementType)i);
-                c.a = unlocked ? 1f : 0.22f;
-                runeSlots[i].color = c;
-            }
+            if (runeSlots != null)
+                for (int i = 0; i < runeSlots.Length; i++)
+                {
+                    if (runeSlots[i] == null) continue;
+                    bool unlocked = ps.IsUnlocked((ElementType)i);
+                    Color c = PlayerStats.ColorOf((ElementType)i);
+                    c.a = unlocked ? 1f : 0.22f;
+                    runeSlots[i].color = c;
+                }
         }
     }
 }
