@@ -19,6 +19,20 @@ public class HUDManager : MonoBehaviour
 
     private readonly string[] runeOrder = { "Pira", "Isa", "Steinn", "Thorn" };
 
+    private Sprite heartSprite;
+    private Sprite[] elementSprites; // Pira, Isa, Steinn, Thorn
+    private bool spritesLoaded;
+
+    private void LoadSprites()
+    {
+        if (spritesLoaded) return;
+        spritesLoaded = true;
+        heartSprite = Resources.Load<Sprite>("HUD/heart");
+        elementSprites = new Sprite[4];
+        for (int i = 0; i < 4; i++)
+            elementSprites[i] = Resources.Load<Sprite>("HUD/" + runeOrder[i]);
+    }
+
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
     private static void Bootstrap()
     {
@@ -135,28 +149,39 @@ public class HUDManager : MonoBehaviour
 
     private void Refresh()
     {
+        LoadSprites();
         var ps = PlayerStats.Instance;
         if (ps != null && hearts != null)
         {
             for (int i = 0; i < hearts.Length; i++)
             {
                 if (hearts[i] == null) continue;
+                if (heartSprite != null) hearts[i].sprite = heartSprite;
                 bool alive = i < ps.CurrentLives;
+                // con imagen de corazon: blanco = vivo, gris oscuro = perdido
                 hearts[i].color = alive
-                    ? new Color(1f, 0.15f, 0.2f)
-                    : new Color(0.18f, 0.18f, 0.18f, 0.6f);
+                    ? Color.white
+                    : new Color(0.18f, 0.18f, 0.18f, 0.7f);
             }
-            if (elementIcon != null) elementIcon.color = PlayerStats.ColorOf(ps.CurrentElement);
+
+            int e = (int)ps.CurrentElement;
+            if (elementIcon != null)
+            {
+                if (elementSprites != null && elementSprites[e] != null)
+                    elementIcon.sprite = elementSprites[e];
+                elementIcon.color = Color.white;
+            }
             if (elementText != null) elementText.text = ps.CurrentElement.ToString();
 
             if (runeSlots != null)
                 for (int i = 0; i < runeSlots.Length; i++)
                 {
                     if (runeSlots[i] == null) continue;
+                    if (elementSprites != null && elementSprites[i] != null)
+                        runeSlots[i].sprite = elementSprites[i];
                     bool unlocked = ps.IsUnlocked((ElementType)i);
-                    Color c = PlayerStats.ColorOf((ElementType)i);
-                    c.a = unlocked ? 1f : 0.22f;
-                    runeSlots[i].color = c;
+                    // imagen a color si desbloqueada; tenue si no
+                    runeSlots[i].color = unlocked ? Color.white : new Color(1f, 1f, 1f, 0.22f);
                 }
         }
     }
