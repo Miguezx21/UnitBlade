@@ -91,9 +91,10 @@ public class HUDManager : MonoBehaviour
         var canvas = canvasGO.AddComponent<Canvas>();
         canvas.renderMode = RenderMode.ScreenSpaceOverlay;
         canvas.sortingOrder = 100;
+        canvas.pixelPerfect = true; // texto/imagenes nitidos (sin blur)
         var scaler = canvasGO.AddComponent<CanvasScaler>();
-        scaler.uiScaleMode = CanvasScaler.ScaleMode.ScaleWithScreenSize;
-        scaler.referenceResolution = new Vector2(1920, 1080);
+        scaler.uiScaleMode = CanvasScaler.ScaleMode.ConstantPixelSize;
+        scaler.referencePixelsPerUnit = 100;
         canvasGO.AddComponent<GraphicRaycaster>();
 
         hearts = new Image[3];
