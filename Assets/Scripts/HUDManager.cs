@@ -13,6 +13,7 @@ public class HUDManager : MonoBehaviour
 
     private Image[] hearts;
     private Image[] runeSlots;
+    private Text[] runeNums;
     private Image elementIcon;
     private Text elementText;
     private Font font;
@@ -72,6 +73,7 @@ public class HUDManager : MonoBehaviour
 
         hearts = new Image[3];
         runeSlots = new Image[4];
+        runeNums = new Text[4];
         for (int i = 0; i < 3; i++)
         {
             var t = canvas.Find("Heart" + i);
@@ -81,6 +83,8 @@ public class HUDManager : MonoBehaviour
         {
             var t = canvas.Find("Rune" + i);
             if (t != null) runeSlots[i] = t.GetComponent<Image>();
+            var n = canvas.Find("RuneNum" + i);
+            if (n != null) runeNums[i] = n.GetComponent<Text>();
         }
         var ei = canvas.Find("ElementIcon");
         if (ei != null) elementIcon = ei.GetComponent<Image>();
@@ -127,11 +131,34 @@ public class HUDManager : MonoBehaviour
         rt.sizeDelta = new Vector2(360, 44);
 
         runeSlots = new Image[4];
+        runeNums = new Text[4];
         for (int i = 0; i < 4; i++)
+        {
             runeSlots[i] = MakeIcon(canvasGO.transform, "Rune" + i, new Vector2(1, 1),
                 new Vector2(-70 - i * 80, -60), 64, PlayerStats.ColorOf((ElementType)i));
+            runeNums[i] = MakeText(canvasGO.transform, "RuneNum" + i, new Vector2(1, 1),
+                new Vector2(-70 - i * 80, -100), (i + 1).ToString());
+        }
 
         return canvas;
+    }
+
+    private Text MakeText(Transform parent, string name, Vector2 anchor, Vector2 pos, string txt)
+    {
+        var go = new GameObject(name);
+        go.transform.SetParent(parent, false);
+        var t = go.AddComponent<Text>();
+        t.font = font;
+        t.fontSize = 26;
+        t.fontStyle = FontStyle.Bold;
+        t.alignment = TextAnchor.MiddleCenter;
+        t.color = Color.white;
+        t.text = txt;
+        var rt = t.rectTransform;
+        rt.anchorMin = rt.anchorMax = rt.pivot = anchor;
+        rt.sizeDelta = new Vector2(40, 30);
+        rt.anchoredPosition = pos;
+        return t;
     }
 
     private Image MakeIcon(Transform parent, string name, Vector2 anchor, Vector2 pos, float size, Color color)
@@ -182,6 +209,14 @@ public class HUDManager : MonoBehaviour
                     bool unlocked = ps.IsUnlocked((ElementType)i);
                     // imagen a color si desbloqueada; tenue si no
                     runeSlots[i].color = unlocked ? Color.white : new Color(1f, 1f, 1f, 0.22f);
+
+                    if (runeNums != null && runeNums[i] != null)
+                    {
+                        runeNums[i].text = (i + 1).ToString();
+                        runeNums[i].color = unlocked
+                            ? Color.white
+                            : new Color(0.5f, 0.5f, 0.5f, 1f);
+                    }
                 }
         }
     }
