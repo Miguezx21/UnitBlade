@@ -48,6 +48,13 @@ public class PlayerStats : MonoBehaviour
         OnChanged?.Invoke();
     }
 
+    /// <summary>Restaura la vida (al reaparecer tras morir).</summary>
+    public void Revive()
+    {
+        CurrentLives = maxLives;
+        OnChanged?.Invoke();
+    }
+
     /// <summary>Pira está disponible desde el inicio; el resto se desbloquea al recoger su runa.</summary>
     public bool IsUnlocked(ElementType e)
     {

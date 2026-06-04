@@ -26,8 +26,18 @@ public class PlayerController2D : MonoBehaviour
         anim = GetComponent<Animator>();
     }
 
+    private bool isDead;
+
     private void Update()
     {
+        // Muerte al quedarse sin corazones
+        if (isDead) return;
+        if (PlayerStats.Instance != null && PlayerStats.Instance.CurrentLives <= 0)
+        {
+            Die();
+            return;
+        }
+
         var kb = Keyboard.current;
         if (kb == null) return;
 
@@ -57,5 +67,25 @@ public class PlayerController2D : MonoBehaviour
             anim.SetFloat("Speed", Mathf.Abs(x) * moveSpeed);
             anim.SetBool("IsGrounded", grounded);
         }
+    }
+
+    private void Die()
+    {
+        isDead = true;
+        if (anim != null) anim.SetBool("IsDead", true);
+        if (rb != null) rb.linearVelocity = Vector2.zero;
+
+        var atk = GetComponent<PlayerAttack>();
+        if (atk != null) atk.enabled = false;
+
+        Debug.Log("[UnitBlade] Kaelen ha muerto. Reapareciendo...");
+        Invoke(nameof(Respawn), 2.5f);
+    }
+
+    private void Respawn()
+    {
+        if (PlayerStats.Instance != null) PlayerStats.Instance.Revive();
+        var scene = UnityEngine.SceneManagement.SceneManager.GetActiveScene();
+        UnityEngine.SceneManagement.SceneManager.LoadScene(scene.buildIndex);
     }
 }
