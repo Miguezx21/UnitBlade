@@ -1,0 +1,9 @@
+{
+  "mcpServers": {
+    "libresprite": {
+      "type": "stdio",
+      "command": "C:\\Users\\migue\\.local\\bin\\uvx.exe",
+      "args": ["libresprite-mcp"]
+    }
+  }
+}
