@@ -17810,11 +17810,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 6
   jumpForce: 8
+  groundCheckDist: 0.1
   groundMask:
     serializedVersion: 2
     m_Bits: 768
-  groundCheck: {fileID: 0}
-  groundRadius: 0.25
+  coyoteTime: 0.15
+  bounceForce: 6
 --- !u!114 &420100008
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17830,9 +17831,6 @@ MonoBehaviour:
   damage: 1
   range: 1.4
   cooldown: 0.4
-  enemyMask:
-    serializedVersion: 2
-    m_Bits: 2048
 --- !u!50 &420100009
 Rigidbody2D:
   serializedVersion: 5
@@ -17925,6 +17923,7 @@ GameObject:
   - component: {fileID: 511100004}
   - component: {fileID: 511100008}
   - component: {fileID: 511100007}
+  - component: {fileID: 511100009}
   m_Layer: 11
   m_Name: Glacius_01
   m_TagString: Enemy
@@ -17944,7 +17943,8 @@ Transform:
   m_LocalPosition: {x: 8, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1362698776}
   m_Father: {fileID: 500100001}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!212 &511100002
@@ -17998,7 +17998,7 @@ SpriteRenderer:
   m_MaskInteraction: 0
   m_Sprite: {fileID: 2000000000, guid: c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 0.64, y: 0.64}
@@ -18104,6 +18104,25 @@ MonoBehaviour:
   maxHP: 3
   hasWeakness: 1
   weakTo: 3
+--- !u!114 &511100009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 511100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58a34d4bccbc00f4daf3e8612c2e031a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MageEnemy
+  Player: {fileID: 420100001}
+  OrbPrefab: {fileID: 6938512979561237437, guid: 784595a7b64e394499d49a12c3626050, type: 3}
+  DetectionRange: 6
+  FireRate: 2
+  OrbDamage: 1
+  OrbSpeed: 5
+  OrbLifetime: 4
 --- !u!1 &521100000
 GameObject:
   m_ObjectHideFlags: 0
@@ -19796,6 +19815,7 @@ GameObject:
   - component: {fileID: 1100220332}
   - component: {fileID: 1100220331}
   - component: {fileID: 1100220330}
+  - component: {fileID: 1100220335}
   m_Layer: 11
   m_Name: Glacius_01 (1)
   m_TagString: Enemy
@@ -19815,7 +19835,8 @@ Transform:
   m_LocalPosition: {x: 30, y: 4.03, z: 0.04}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1628710484}
   m_Father: {fileID: 500100001}
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!114 &1100220330
@@ -19967,7 +19988,7 @@ SpriteRenderer:
   m_MaskInteraction: 0
   m_Sprite: {fileID: 2000000000, guid: c3d4e5f6a7b8c9d0e1f2a3b4c5d6e7f8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 0.64, y: 0.64}
@@ -19975,6 +19996,25 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!114 &1100220335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1100220328}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58a34d4bccbc00f4daf3e8612c2e031a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MageEnemy
+  Player: {fileID: 420100001}
+  OrbPrefab: {fileID: 6938512979561237437, guid: 784595a7b64e394499d49a12c3626050, type: 3}
+  DetectionRange: 6
+  FireRate: 2
+  OrbDamage: 1
+  OrbSpeed: 5
+  OrbLifetime: 4
 --- !u!1 &1178377320
 GameObject:
   m_ObjectHideFlags: 0
@@ -20279,6 +20319,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1351547618}
   m_CullTransparentMesh: 1
+--- !u!1 &1362698775
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1362698776}
+  m_Layer: 11
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1362698776
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1362698775}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.72, y: -0.207, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 511100001}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1428721336
 GameObject:
   m_ObjectHideFlags: 0
@@ -20462,6 +20533,37 @@ MonoBehaviour:
   target: {fileID: 0}
   smooth: 5
   offset: {x: 0, y: 1, z: -10}
+--- !u!1 &1628710483
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1628710484}
+  m_Layer: 11
+  m_Name: IcePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1628710484
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1628710483}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.633, y: -0.315, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1100220329}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1777567096
 GameObject:
   m_ObjectHideFlags: 0
