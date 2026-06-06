@@ -18,6 +18,7 @@ public class RuneRevealTracker : MonoBehaviour
 
     private bool _revealed;
     private bool _armed;
+    private int _lastAlive = -1;
     private SpriteRenderer _sr;
     private Collider2D _col;
     private RuneVisual _visual;
@@ -39,8 +40,17 @@ public class RuneRevealTracker : MonoBehaviour
     {
         if (_revealed || !_armed) return;
 
+        int alive = 0;
         foreach (var e in enemies)
-            if (e != null && e.activeInHierarchy) return; // aún quedan vivos
+            if (e != null && e.activeInHierarchy) alive++;
+
+        if (alive != _lastAlive)
+        {
+            _lastAlive = alive;
+            Debug.Log($"[RuneReveal] '{name}': quedan {alive} enemigos por eliminar para revelar la runa.");
+        }
+
+        if (alive > 0) return; // aún quedan vivos
 
         _revealed = true;
         SetVisible(true);
