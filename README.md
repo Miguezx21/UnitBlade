@@ -133,4 +133,5 @@ Los efectos viven en `Assets/Sounds/`. Para la música, asigna las pistas al obj
 - **GitHub:** https://github.com/Miguezx21/UnitBlade.git (rama `main`)
 - Binarios grandes gestionados con **Git LFS**.
 
-🤖 Desarrollado con apoyo de [Claude Code](https://claude.com/claude-code)
+Link itchio: https://miguezx21yt.itch.io/unitblade
+
