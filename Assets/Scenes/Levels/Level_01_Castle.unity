@@ -18355,7 +18355,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 3
   hasWeakness: 1
-  weakTo: 3
+  weakTo: 0
 --- !u!61 &1294049227
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -19060,7 +19060,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 3
   hasWeakness: 1
-  weakTo: 3
+  weakTo: 0
 --- !u!61 &1632596547
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -19305,7 +19305,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 3
   hasWeakness: 1
-  weakTo: 3
+  weakTo: 0
 --- !u!61 &1689518544
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -19762,7 +19762,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 3
   hasWeakness: 1
-  weakTo: 3
+  weakTo: 0
 --- !u!61 &2044207757
 BoxCollider2D:
   m_ObjectHideFlags: 0
