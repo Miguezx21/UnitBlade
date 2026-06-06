@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 /// <summary>
 /// Lleva el registro de las runas recolectadas por el jugador.
@@ -13,6 +14,10 @@ public class GameProgress : MonoBehaviour
 
     private readonly HashSet<string> runes = new HashSet<string>();
     private const string SaveKey = "UB_Runes";
+
+    // Estado de runas al INICIO del nivel actual (para revertir al reintentar).
+    private readonly HashSet<string> _levelStartSnapshot = new HashSet<string>();
+    private int _lastSceneIndex = -999;
 
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
     private static void Bootstrap()
@@ -36,6 +41,28 @@ public class GameProgress : MonoBehaviour
         // Inicio limpio cada sesión: el jugador comienza sin runas y las recoge jugando.
         PlayerPrefs.DeleteKey(SaveKey);
         runes.Clear();
+    }
+
+    private void OnEnable()  => SceneManager.sceneLoaded += OnSceneLoaded;
+    private void OnDisable() => SceneManager.sceneLoaded -= OnSceneLoaded;
+
+    private void OnSceneLoaded(Scene s, LoadSceneMode mode)
+    {
+        if (s.buildIndex == _lastSceneIndex)
+        {
+            // Misma escena recargada = REINTENTO: revertir runas al inicio del nivel.
+            runes.Clear();
+            foreach (var r in _levelStartSnapshot) runes.Add(r);
+            Save();
+            Debug.Log("[UnitBlade] Reintento: runas restauradas al inicio del nivel (total: " + runes.Count + ").");
+        }
+        else
+        {
+            // Nivel nuevo (o avance): guardar el estado actual como punto de partida.
+            _levelStartSnapshot.Clear();
+            foreach (var r in runes) _levelStartSnapshot.Add(r);
+            _lastSceneIndex = s.buildIndex;
+        }
     }
 
     public bool HasRune(string id)
