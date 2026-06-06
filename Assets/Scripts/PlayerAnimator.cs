@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Animator))]
@@ -12,28 +13,36 @@ public class PlayerAnimator : MonoBehaviour
     private static readonly int AttackingHash = Animator.StringToHash("IsAttacking");
     private static readonly int AxeModeHash   = Animator.StringToHash("IsAxeMode");
     private static readonly int JumpTrigHash  = Animator.StringToHash("JumpTriger");
-    private static readonly int IsDeadHash    = Animator.StringToHash("IsDead"); // typo original del Animator Controller
+    private static readonly int IsDeadHash    = Animator.StringToHash("IsDead");
+    private static readonly int HitHash       = Animator.StringToHash("Hit");
+
+    // Solo intentamos escribir parámetros que existan realmente en el controller.
+    private readonly HashSet<int> _params = new HashSet<int>();
 
     private void Awake()
     {
         _anim = GetComponent<Animator>();
         _rb   = GetComponent<Rigidbody2D>();
+        CacheParams();
+    }
+
+    private void CacheParams()
+    {
+        _params.Clear();
+        if (_anim.runtimeAnimatorController == null) return;
+        foreach (var p in _anim.parameters) _params.Add(p.nameHash);
     }
 
     private void Update()
     {
-        _anim.SetFloat(SpeedHash, Mathf.Abs(_rb.linearVelocity.x));
+        if (_params.Contains(SpeedHash))
+            _anim.SetFloat(SpeedHash, Mathf.Abs(_rb.linearVelocity.x));
     }
 
-    public void SetGrounded(bool value)  => _anim.SetBool(GroundedHash,  value);
-    public void SetAttacking(bool value) => _anim.SetBool(AttackingHash, value);
-    public void SetAxeMode(bool value)   => _anim.SetBool(AxeModeHash,   value);
-    public void SetTakingDamage(bool value) { /* sin parámetro en el Animator por ahora */ }
-    public void SetDead(bool value)
-    {
-        foreach (var p in _anim.parameters)
-            if (p.nameHash == IsDeadHash) { _anim.SetBool(IsDeadHash, value); return; }
-        // Si no existe el parámetro IsDead en el Animator, lo ignora silenciosamente
-    }
-    public void OnJump() => _anim.SetTrigger(JumpTrigHash);
+    public void SetGrounded(bool value)  { if (_params.Contains(GroundedHash))  _anim.SetBool(GroundedHash, value); }
+    public void SetAttacking(bool value) { if (_params.Contains(AttackingHash)) _anim.SetBool(AttackingHash, value); }
+    public void SetAxeMode(bool value)   { if (_params.Contains(AxeModeHash))   _anim.SetBool(AxeModeHash, value); }
+    public void SetTakingDamage(bool value) { if (value && _params.Contains(HitHash)) _anim.SetTrigger(HitHash); }
+    public void SetDead(bool value)      { if (_params.Contains(IsDeadHash))    _anim.SetBool(IsDeadHash, value); }
+    public void OnJump()                 { if (_params.Contains(JumpTrigHash))  _anim.SetTrigger(JumpTrigHash); }
 }
