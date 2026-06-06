@@ -27,11 +27,11 @@ public static class KaelenSetup
     static readonly (string name, int start, int end, bool loop)[] RANGES =
     {
         ("Idle",   0,  3,  true),
-        ("Walk",   4,  11, true),
+        ("Walk",   4,  8,  true),
+        ("Hit",    9,  11, false),
         ("Attack", 12, 15, false),
         ("Jump",   16, 19, false),
-        ("Hit",    20, 21, false),
-        ("Dead",   22, 23, false),
+        ("Dead",   20, 23, false),
     };
 
     [MenuItem("Tools/UnitBlade/Configurar Kaelen (Aseprite)")]
