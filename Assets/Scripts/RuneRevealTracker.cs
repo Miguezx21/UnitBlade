@@ -63,4 +63,18 @@ public class RuneRevealTracker : MonoBehaviour
         if (_col != null) _col.enabled = v;
         if (_visual != null) _visual.enabled = v; // al activarse, dispara el "pop"
     }
+
+    // En la vista Scene dibuja líneas hacia los enemigos que faltan por matar
+    // para revelar esta runa. Útil para encontrarlos.
+    private void OnDrawGizmos()
+    {
+        if (enemies == null) return;
+        Gizmos.color = Color.cyan;
+        foreach (var e in enemies)
+        {
+            if (e == null || !e.activeInHierarchy) continue;
+            Gizmos.DrawLine(transform.position, e.transform.position);
+            Gizmos.DrawWireSphere(e.transform.position, 0.6f);
+        }
+    }
 }
