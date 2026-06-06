@@ -80,8 +80,60 @@ public class MainMenuController : MonoBehaviour
     private void Awake()
     {
         _font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
+
+        // Si el menú ya está construido en la escena (editado a mano), lo respetamos
+        // y solo conectamos los botones. Si no, lo construimos por código.
+        if (transform.Find("MenuCanvas") != null)
+            BindExisting();
+        else
+            BuildUI();
+
+        AudioManager.Instance?.PlayMusic(AudioManager.Instance != null ? AudioManager.Instance.menuMusic : null);
+    }
+
+    /// <summary>Construye el menú como objetos REALES editables (para el editor).</summary>
+    public void BuildEditable()
+    {
+        _font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
+        var old = transform.Find("MenuCanvas");
+        if (old != null) DestroyImmediate(old.gameObject);
         BuildUI();
-        AudioManager.Instance?.PlayMusic(AudioManager.Instance.menuMusic);
+        // Dejar visible el grupo principal y ocultar paneles para edición clara.
+        if (_panelRunas != null) _panelRunas.SetActive(false);
+        if (_panelInstr != null) _panelInstr.SetActive(false);
+        if (_panelHist != null) _panelHist.SetActive(false);
+    }
+
+    /// <summary>Reconecta los botones de un menú ya presente en la escena.</summary>
+    private void BindExisting()
+    {
+        var canvas = transform.Find("MenuCanvas");
+        if (canvas == null) { BuildUI(); return; }
+
+        _mainGroup  = canvas.Find("Main")?.gameObject;
+        _panelRunas = canvas.Find("Panel_Runas")?.gameObject;
+        _panelInstr = canvas.Find("Panel_INSTRUCCIONES")?.gameObject;
+        _panelHist  = canvas.Find("Panel_HISTORIA")?.gameObject;
+
+        Wire(_mainGroup, "Btn_JUGAR",         OnPlay);
+        Wire(_mainGroup, "Btn_RUNAS",         () => Show(_panelRunas));
+        Wire(_mainGroup, "Btn_INSTRUCCIONES", () => Show(_panelInstr));
+        Wire(_mainGroup, "Btn_HISTORIA",      () => Show(_panelHist));
+
+        if (_panelRunas != null) { Wire(_panelRunas, "Btn_VOLVER", () => Back(_panelRunas)); _panelRunas.SetActive(false); }
+        if (_panelInstr != null) { Wire(_panelInstr, "Btn_VOLVER", () => Back(_panelInstr)); _panelInstr.SetActive(false); }
+        if (_panelHist  != null) { Wire(_panelHist,  "Btn_VOLVER", () => Back(_panelHist));  _panelHist.SetActive(false); }
+    }
+
+    private void Wire(GameObject root, string buttonName, UnityEngine.Events.UnityAction action)
+    {
+        if (root == null) return;
+        var t = root.transform.Find(buttonName);
+        if (t == null) return;
+        var btn = t.GetComponent<Button>();
+        if (btn == null) return;
+        btn.onClick.RemoveAllListeners();
+        btn.onClick.AddListener(action);
     }
 
     private void BuildUI()

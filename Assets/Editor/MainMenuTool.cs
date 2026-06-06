@@ -58,11 +58,42 @@ public static class MainMenuTool
         menu.runeIsa    = LoadSprite("Assets/Resources/HUD/Isa.png");
         menu.runeSteinn = LoadSprite("Assets/Resources/HUD/Steinn.png");
 
+        // Construir el menú como objetos editables en la escena.
+        menu.BuildEditable();
+
         EditorSceneManager.SaveScene(scene, SCENE_PATH);
         RegisterAsFirstScene();
 
         Debug.Log("[MainMenuTool] MainMenu creado y registrado como escena 0. " +
                   "Asigna las pistas de música al AudioManager cuando las tengas.");
+    }
+
+    [MenuItem("Tools/UnitBlade/Menu: Construir-Editar en Escena")]
+    public static void RebuildInScene()
+    {
+        var menu = Object.FindFirstObjectByType<MainMenuController>();
+        if (menu == null)
+        {
+            Debug.LogError("[MainMenuTool] No hay MainMenuController en la escena activa. " +
+                "Abre la escena MainMenu (o créala con 'Crear Escena Menu Principal').");
+            return;
+        }
+        menu.BuildEditable();
+        EditorUtility.SetDirty(menu);
+        EditorSceneManager.MarkSceneDirty(menu.gameObject.scene);
+        Debug.Log("[MainMenuTool] Menú reconstruido en escena. Ahora puedes cambiar la imagen de " +
+            "fondo (objeto 'Background') y los sprites de runas (en MainMenu -> campos), y volver a ejecutar esto. Guarda con Ctrl+S.");
+    }
+
+    [MenuItem("Tools/UnitBlade/Menu: Limpiar (rehacer en runtime)")]
+    public static void ClearSceneMenu()
+    {
+        var menu = Object.FindFirstObjectByType<MainMenuController>();
+        if (menu == null) return;
+        var canvas = menu.transform.Find("MenuCanvas");
+        if (canvas != null) Object.DestroyImmediate(canvas.gameObject);
+        EditorSceneManager.MarkSceneDirty(menu.gameObject.scene);
+        Debug.Log("[MainMenuTool] Menú limpiado; se reconstruirá por código al entrar en Play.");
     }
 
     static void RegisterAsFirstScene()
