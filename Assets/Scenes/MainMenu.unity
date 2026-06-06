@@ -119,7 +119,7 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &320944438
+--- !u!1 &408981853
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -127,9 +127,65 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 320944441}
-  - component: {fileID: 320944440}
-  - component: {fileID: 320944439}
+  - component: {fileID: 408981855}
+  - component: {fileID: 408981854}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &408981854
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 408981853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c4998ff9b52c0a46ae8084a67d7ff88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AudioManager
+  menuMusic: {fileID: 0}
+  levelMusic: {fileID: 0}
+  bossMusic: {fileID: 0}
+  sfxSword: {fileID: 8300000, guid: 1abe2863939685544b5afe391cb370f8, type: 3}
+  sfxJump: {fileID: 8300000, guid: 2a01d8ebf8fa81a4685f15f7ddf869bd, type: 3}
+  sfxFire: {fileID: 8300000, guid: 2465ad09069462147b98224a02b9e220, type: 3}
+  sfxIce: {fileID: 8300000, guid: 1a62aeea5cc8d7349a09a28fdeaac40d, type: 3}
+  sfxRock: {fileID: 8300000, guid: ab63c274124f49444a31783ae9adf382, type: 3}
+  sfxLightning: {fileID: 8300000, guid: 69f833a49ab875240ad3c97f26b08b9e, type: 3}
+  sfxParry: {fileID: 8300000, guid: 095ee4a67c40c53468a33421f7d137bc, type: 3}
+  musicVolume: 0.5
+  sfxVolume: 0.9
+--- !u!4 &408981855
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 408981853}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1498042762
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1498042765}
+  - component: {fileID: 1498042764}
+  - component: {fileID: 1498042763}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -137,13 +193,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &320944439
+--- !u!114 &1498042763
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 320944438}
+  m_GameObject: {fileID: 1498042762}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 01614664b831546d2ae94a42149d80ac, type: 3}
@@ -168,13 +224,13 @@ MonoBehaviour:
   m_PointerBehavior: 0
   m_CursorLockBehavior: 0
   m_ScrollDeltaPerTick: 6
---- !u!114 &320944440
+--- !u!114 &1498042764
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 320944438}
+  m_GameObject: {fileID: 1498042762}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
@@ -183,13 +239,13 @@ MonoBehaviour:
   m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
---- !u!4 &320944441
+--- !u!4 &1498042765
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 320944438}
+  m_GameObject: {fileID: 1498042762}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -198,7 +254,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1514026562
+--- !u!1 &1713831367
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -206,8 +262,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1514026564}
-  - component: {fileID: 1514026563}
+  - component: {fileID: 1713831369}
+  - component: {fileID: 1713831368}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -215,13 +271,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!20 &1514026563
+--- !u!20 &1713831368
 Camera:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1514026562}
+  m_GameObject: {fileID: 1713831367}
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
@@ -266,13 +322,13 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!4 &1514026564
+--- !u!4 &1713831369
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1514026562}
+  m_GameObject: {fileID: 1713831367}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -281,7 +337,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1808049217
+--- !u!1 &1918907899
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -289,64 +345,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1808049219}
-  - component: {fileID: 1808049218}
-  m_Layer: 0
-  m_Name: AudioManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1808049218
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1808049217}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c4998ff9b52c0a46ae8084a67d7ff88, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AudioManager
-  menuMusic: {fileID: 0}
-  levelMusic: {fileID: 0}
-  bossMusic: {fileID: 0}
-  sfxSword: {fileID: 8300000, guid: 1abe2863939685544b5afe391cb370f8, type: 3}
-  sfxJump: {fileID: 8300000, guid: 2a01d8ebf8fa81a4685f15f7ddf869bd, type: 3}
-  sfxFire: {fileID: 8300000, guid: 2465ad09069462147b98224a02b9e220, type: 3}
-  sfxIce: {fileID: 8300000, guid: 1a62aeea5cc8d7349a09a28fdeaac40d, type: 3}
-  sfxRock: {fileID: 8300000, guid: ab63c274124f49444a31783ae9adf382, type: 3}
-  sfxLightning: {fileID: 8300000, guid: 69f833a49ab875240ad3c97f26b08b9e, type: 3}
-  sfxParry: {fileID: 8300000, guid: 095ee4a67c40c53468a33421f7d137bc, type: 3}
-  musicVolume: 0.5
-  sfxVolume: 0.9
---- !u!4 &1808049219
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1808049217}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &2064274684
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2064274686}
-  - component: {fileID: 2064274685}
+  - component: {fileID: 1918907901}
+  - component: {fileID: 1918907900}
   m_Layer: 0
   m_Name: MainMenu
   m_TagString: Untagged
@@ -354,31 +354,32 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &2064274685
+--- !u!114 &1918907900
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2064274684}
+  m_GameObject: {fileID: 1918907899}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e5c863ff18c8bb43a5ebe858b5a1f43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MainMenuController
   background: {fileID: 21300000, guid: 839d60363ce85e7459efbcda6b3e5d26, type: 3}
+  kaelen: {fileID: -873504232435880350, guid: 021b08d7218eeea46a140eb2f0c09f05, type: 3}
   runeThron: {fileID: 0}
   runePira: {fileID: 0}
   runeIsa: {fileID: 0}
   runeSteinn: {fileID: 0}
   firstScene: Level_01_Castle
---- !u!4 &2064274686
+--- !u!4 &1918907901
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2064274684}
+  m_GameObject: {fileID: 1918907899}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -391,7 +392,7 @@ Transform:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 1514026564}
-  - {fileID: 320944441}
-  - {fileID: 1808049219}
-  - {fileID: 2064274686}
+  - {fileID: 1713831369}
+  - {fileID: 1498042765}
+  - {fileID: 408981855}
+  - {fileID: 1918907901}

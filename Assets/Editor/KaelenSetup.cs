@@ -105,6 +105,7 @@ public static class KaelenSetup
         ac.AddParameter("IsDead",      AnimatorControllerParameterType.Bool);
         ac.AddParameter("JumpTriger",  AnimatorControllerParameterType.Trigger);
         ac.AddParameter("Hit",         AnimatorControllerParameterType.Trigger);
+        ac.AddParameter("Element",     AnimatorControllerParameterType.Int); // 0=Pira 1=Isa 2=Steinn 3=Thorn
 
         var sm = ac.layers[0].stateMachine;
 
@@ -112,7 +113,6 @@ public static class KaelenSetup
         sm.defaultState = sIdle;
         var sWalk = sm.AddState("Walk"); sWalk.motion = clips["Walk"];
         var sJump = sm.AddState("Jump"); sJump.motion = clips["Jump"];
-        var sAtk  = sm.AddState("Attack"); sAtk.motion = clips["Attack"];
         var sHit  = sm.AddState("Hit"); sHit.motion = clips["Hit"];
         var sDead = sm.AddState("Dead"); sDead.motion = clips["Dead"];
 
@@ -133,13 +133,24 @@ public static class KaelenSetup
         jumpEnd.AddCondition(AnimatorConditionMode.If, 0, "IsGrounded");
         jumpEnd.hasExitTime = false; jumpEnd.duration = 0.05f;
 
-        // Attack mientras IsAttacking; sale solo al terminar / soltar.
-        var anyAtk = sm.AddAnyStateTransition(sAtk);
-        anyAtk.AddCondition(AnimatorConditionMode.If, 0, "IsAttacking");
-        anyAtk.duration = 0.02f; anyAtk.canTransitionToSelf = false;
-        var atkEnd = sAtk.AddTransition(sIdle);
-        atkEnd.AddCondition(AnimatorConditionMode.IfNot, 0, "IsAttacking");
-        atkEnd.hasExitTime = true; atkEnd.exitTime = 0.8f; atkEnd.duration = 0.05f;
+        // Ataques POR ELEMENTO (la espada cambia de color según la runa equipada).
+        // Si existe la hoja elemental se usan sus clips; si no, todos usan el ataque base.
+        var elemClips = LoadElementalAttacks(); // [Pira, Isa, Steinn, Thorn] (puede tener nulls)
+        string[] elemStateNames = { "AttackPira", "AttackIsa", "AttackSteinn", "AttackThron" };
+        for (int i = 0; i < 4; i++)
+        {
+            var st = sm.AddState(elemStateNames[i]);
+            st.motion = (elemClips != null && elemClips[i] != null) ? elemClips[i] : clips["Attack"];
+
+            var anyT = sm.AddAnyStateTransition(st);
+            anyT.AddCondition(AnimatorConditionMode.If, 0, "IsAttacking");
+            anyT.AddCondition(AnimatorConditionMode.Equals, i, "Element");
+            anyT.duration = 0.02f; anyT.canTransitionToSelf = false;
+
+            var end = st.AddTransition(sIdle);
+            end.AddCondition(AnimatorConditionMode.IfNot, 0, "IsAttacking");
+            end.hasExitTime = true; end.exitTime = 0.8f; end.duration = 0.05f;
+        }
 
         // Hit por trigger, vuelve a Idle al terminar.
         var anyHit = sm.AddAnyStateTransition(sHit);
@@ -207,6 +218,57 @@ public static class KaelenSetup
         if (System.IO.File.Exists(path)) AssetDatabase.DeleteAsset(path);
         AssetDatabase.CreateAsset(clip, path);
         return clip;
+    }
+
+    // Rutas candidatas para la hoja de ataques elementales (con tags por elemento).
+    static readonly string[] ATTACK_PATHS =
+    {
+        "Assets/Art/Characters/Kaelen/KaelenAttacks.ase",
+        "Assets/Art/Characters/Kaelen/KaelenAtaques.ase",
+        "Assets/Art/Characters/Kaelen/KaelenElemental.ase",
+    };
+
+    /// <summary>
+    /// Devuelve los clips de ataque [Pira, Isa, Steinn, Thorn] desde la hoja
+    /// elemental con tags. Si el archivo no existe aún, devuelve null.
+    /// </summary>
+    static AnimationClip[] LoadElementalAttacks()
+    {
+        string path = null;
+        foreach (var p in ATTACK_PATHS)
+            if (System.IO.File.Exists(p)) { path = p; break; }
+
+        if (path == null)
+        {
+            Debug.Log("[KaelenSetup] (Opcional) No hay hoja de ataques elementales todavía. " +
+                "Guarda el .ase con tags como 'Assets/Art/Characters/Kaelen/KaelenAttacks.ase' " +
+                "para activar los ataques por runa. Por ahora todos usan el ataque base.");
+            return null;
+        }
+
+        var clips = new System.Collections.Generic.List<AnimationClip>();
+        foreach (var a in AssetDatabase.LoadAllAssetsAtPath(path))
+            if (a is AnimationClip c) clips.Add(c);
+
+        AnimationClip Match(params string[] keys)
+        {
+            foreach (var c in clips)
+            {
+                string n = c.name.ToLower().Replace(" ", "");
+                foreach (var k in keys) if (n.Contains(k)) return c;
+            }
+            return null;
+        }
+
+        var result = new AnimationClip[4];
+        result[0] = Match("pira", "fuego", "fire");                 // Pira
+        result[1] = Match("isa", "hielo", "ice");                   // Isa
+        result[2] = Match("stein", "steinn", "piedra", "rock");     // Steinn
+        result[3] = Match("stor", "storm", "thron", "thor", "rayo");// Thorn (rayo)
+
+        Debug.Log($"[KaelenSetup] Ataques elementales detectados en {path}: " +
+            $"Pira={(result[0]!=null)} Isa={(result[1]!=null)} Steinn={(result[2]!=null)} Thorn={(result[3]!=null)}");
+        return result;
     }
 
     static int ParseIndex(string n)

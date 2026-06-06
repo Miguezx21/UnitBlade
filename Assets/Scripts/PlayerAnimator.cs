@@ -15,6 +15,7 @@ public class PlayerAnimator : MonoBehaviour
     private static readonly int JumpTrigHash  = Animator.StringToHash("JumpTriger");
     private static readonly int IsDeadHash    = Animator.StringToHash("IsDead");
     private static readonly int HitHash       = Animator.StringToHash("Hit");
+    private static readonly int ElementHash   = Animator.StringToHash("Element"); // 0=Pira 1=Isa 2=Steinn 3=Thorn
 
     // Solo intentamos escribir parámetros que existan realmente en el controller.
     private readonly HashSet<int> _params = new HashSet<int>();
@@ -37,6 +38,10 @@ public class PlayerAnimator : MonoBehaviour
     {
         if (_params.Contains(SpeedHash))
             _anim.SetFloat(SpeedHash, Mathf.Abs(_rb.linearVelocity.x));
+
+        // El ataque cambia según la runa equipada (color de la espada).
+        if (_params.Contains(ElementHash) && PlayerStats.Instance != null)
+            _anim.SetInteger(ElementHash, (int)PlayerStats.Instance.CurrentElement);
     }
 
     public void SetGrounded(bool value)  { if (_params.Contains(GroundedHash))  _anim.SetBool(GroundedHash, value); }
