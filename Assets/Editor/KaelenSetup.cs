@@ -80,9 +80,25 @@ public static class KaelenSetup
             clips[r.name] = clip;
         }
 
-        // ── AnimatorController ───────────────────────────────────────────────
-        if (System.IO.File.Exists(CTRL)) AssetDatabase.DeleteAsset(CTRL);
-        var ac = AnimatorController.CreateAnimatorControllerAtPath(CTRL);
+        // ── AnimatorController (REUTILIZA el asset para conservar su GUID) ────
+        // Así TODAS las escenas que referencian este controller se actualizan
+        // a la vez, sin tener que re-asignar Kaelen en cada escena.
+        var ac = AssetDatabase.LoadAssetAtPath<AnimatorController>(CTRL);
+        if (ac == null)
+        {
+            ac = AnimatorController.CreateAnimatorControllerAtPath(CTRL);
+        }
+        else
+        {
+            // Limpiar parámetros y estados previos.
+            for (int i = ac.parameters.Length - 1; i >= 0; i--)
+                ac.RemoveParameter(ac.parameters[i]);
+            var sm0 = ac.layers[0].stateMachine;
+            foreach (var t in sm0.anyStateTransitions.ToArray())
+                sm0.RemoveAnyStateTransition(t);
+            foreach (var st in sm0.states.ToArray())
+                sm0.RemoveState(st.state);
+        }
         ac.AddParameter("Speed",       AnimatorControllerParameterType.Float);
         ac.AddParameter("IsGrounded",  AnimatorControllerParameterType.Bool);
         ac.AddParameter("IsAttacking", AnimatorControllerParameterType.Bool);

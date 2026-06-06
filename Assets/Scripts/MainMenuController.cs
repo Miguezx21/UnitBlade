@@ -11,6 +11,7 @@ public class MainMenuController : MonoBehaviour
 {
     [Header("Sprites (asignados por la herramienta)")]
     public Sprite background;
+    public Sprite kaelen;      // Personaje para el menú
     public Sprite runeThron;   // Thurisaz (rayo)
     public Sprite runePira;    // Kenaz (fuego)
     public Sprite runeIsa;     // Hielo
@@ -110,16 +111,30 @@ public class MainMenuController : MonoBehaviour
         _mainGroup.transform.SetParent(canvasGO.transform, false);
         Stretch(_mainGroup.AddComponent<RectTransform>());
 
-        // Título
-        var title = NewText(_mainGroup.transform, "Title", "UNIT BLADE", 110, GOLD);
-        title.fontStyle = FontStyle.Bold;
-        Anchor(title.rectTransform, new Vector2(0.5f, 1f), new Vector2(0, -200), new Vector2(1200, 160));
+        // Kaelen a la izquierda (como en el arte de referencia)
+        if (kaelen != null)
+        {
+            var hero = NewImage(_mainGroup.transform, "Kaelen");
+            hero.sprite = kaelen; hero.color = Color.white; hero.preserveAspect = true;
+            var hrt = hero.rectTransform;
+            hrt.anchorMin = hrt.anchorMax = hrt.pivot = new Vector2(0f, 0f);
+            hrt.anchoredPosition = new Vector2(120, 60);
+            hrt.sizeDelta = new Vector2(620, 900);
+        }
 
-        // Botones
-        MakeButton(_mainGroup.transform, "JUGAR",        -60, OnPlay);
-        MakeButton(_mainGroup.transform, "RUNAS",       -190, () => Show(_panelRunas));
-        MakeButton(_mainGroup.transform, "INSTRUCCIONES",-320, () => Show(_panelInstr));
-        MakeButton(_mainGroup.transform, "HISTORIA",    -450, () => Show(_panelHist));
+        // Sombra/recuadro para el título
+        var title = NewText(_mainGroup.transform, "Title", "UNIT BLADE", 120, GOLD);
+        title.fontStyle = FontStyle.Bold;
+        Anchor(title.rectTransform, new Vector2(0.5f, 1f), new Vector2(60, -150), new Vector2(1300, 170));
+
+        // Botones (centro-derecha)
+        MakeMenuButton("JUGAR",        -40, OnPlay);
+        MakeMenuButton("RUNAS",       -160, () => Show(_panelRunas));
+        MakeMenuButton("INSTRUCCIONES",-280, () => Show(_panelInstr));
+        MakeMenuButton("HISTORIA",    -400, () => Show(_panelHist));
+
+        // Recuadro de runas (siempre visible, arriba a la derecha)
+        BuildRuneSidebar(_mainGroup.transform);
 
         // Paneles
         _panelRunas = BuildRunesPanel(canvasGO.transform);
@@ -231,6 +246,80 @@ public class MainMenuController : MonoBehaviour
         {
             var e = t.gameObject.AddComponent<LayoutElement>();
             e.flexibleWidth = 1;
+        }
+    }
+
+    // Botón del menú principal: anclado al centro, apilado por 'y'.
+    private void MakeMenuButton(string label, float y, UnityEngine.Events.UnityAction onClick)
+    {
+        var go = new GameObject("Btn_" + label);
+        go.transform.SetParent(_mainGroup.transform, false);
+        var img = go.AddComponent<Image>();
+        img.color = new Color(0.12f, 0.14f, 0.20f, 0.92f);
+        var rt = img.rectTransform;
+        rt.anchorMin = rt.anchorMax = rt.pivot = new Vector2(0.5f, 0.5f);
+        rt.sizeDelta = new Vector2(460, 96);
+        rt.anchoredPosition = new Vector2(0, y);
+
+        var btn = go.AddComponent<Button>();
+        btn.onClick.AddListener(onClick);
+        var colors = btn.colors;
+        colors.normalColor = Color.white;
+        colors.highlightedColor = GOLD;
+        colors.pressedColor = new Color(0.85f, 0.65f, 0.2f);
+        btn.colors = colors;
+
+        var txt = NewText(go.transform, "Label", label, 42, Color.white);
+        txt.fontStyle = FontStyle.Bold;
+        Stretch(txt.rectTransform);
+    }
+
+    // Recuadro de runas siempre visible (arriba a la derecha), estilo referencia.
+    private void BuildRuneSidebar(Transform parent)
+    {
+        var box = NewImage(parent, "RuneSidebar");
+        box.color = new Color(0.05f, 0.06f, 0.10f, 0.78f);
+        var brt = box.rectTransform;
+        brt.anchorMin = brt.anchorMax = brt.pivot = new Vector2(1f, 1f);
+        brt.anchoredPosition = new Vector2(-40, -40);
+        brt.sizeDelta = new Vector2(560, 560);
+
+        var vlg = box.gameObject.AddComponent<VerticalLayoutGroup>();
+        vlg.spacing = 14; vlg.padding = new RectOffset(20, 20, 18, 18);
+        vlg.childControlWidth = true; vlg.childControlHeight = true;
+        vlg.childForceExpandWidth = true; vlg.childForceExpandHeight = false;
+        vlg.childAlignment = TextAnchor.UpperLeft;
+
+        Sprite[] icons = { runeThron, runePira, runeIsa, runeSteinn };
+        for (int i = 0; i < RUNES.Length; i++)
+        {
+            var row = new GameObject("R" + i);
+            row.transform.SetParent(box.transform, false);
+            row.AddComponent<RectTransform>();
+            var le = row.AddComponent<LayoutElement>(); le.minHeight = 120;
+            var hlg = row.AddComponent<HorizontalLayoutGroup>();
+            hlg.spacing = 14; hlg.childControlWidth = true; hlg.childControlHeight = true;
+            hlg.childForceExpandWidth = false; hlg.childForceExpandHeight = false;
+            hlg.childAlignment = TextAnchor.MiddleLeft;
+
+            var ic = NewImage(row.transform, "Icon");
+            if (icons[i] != null) { ic.sprite = icons[i]; ic.color = Color.white; }
+            else ic.color = new Color(1, 1, 1, 0.15f);
+            ic.preserveAspect = true;
+            var ile = ic.gameObject.AddComponent<LayoutElement>();
+            ile.preferredWidth = 90; ile.preferredHeight = 90; ile.minWidth = 90;
+
+            var col = new GameObject("T"); col.transform.SetParent(row.transform, false);
+            col.AddComponent<RectTransform>();
+            var cvl = col.AddComponent<VerticalLayoutGroup>();
+            cvl.childControlWidth = true; cvl.childControlHeight = true;
+            cvl.childForceExpandWidth = true; cvl.childForceExpandHeight = false;
+            var cle = col.AddComponent<LayoutElement>(); cle.flexibleWidth = 1;
+
+            var t1 = NewText(col.transform, "N", RUNES[i].title, 26, GOLD);
+            t1.fontStyle = FontStyle.Bold; t1.alignment = TextAnchor.UpperLeft;
+            var t2 = NewText(col.transform, "S", RUNES[i].sub, 20, new Color(0.85f, 0.88f, 0.95f));
+            t2.alignment = TextAnchor.UpperLeft;
         }
     }
 

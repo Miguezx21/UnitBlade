@@ -52,6 +52,7 @@ public static class MainMenuTool
             "Assets/Art/Backgrounds/HR_Dark Gothic Castle.png",
             "Assets/Art/Backgrounds/forestbg.jpg",
             "Assets/Art/Backgrounds/backgroundboss.jpg");
+        menu.kaelen     = LoadAseSprite("Assets/Art/Characters/Kaelen/KAELENfinal.ase");
         menu.runeThron  = LoadSprite("Assets/Resources/HUD/Thorn.png");
         menu.runePira   = LoadSprite("Assets/Resources/HUD/Pira.png");
         menu.runeIsa    = LoadSprite("Assets/Resources/HUD/Isa.png");
@@ -83,6 +84,22 @@ public static class MainMenuTool
     static Sprite LoadSprite(string path)
     {
         return AssetDatabase.LoadAssetAtPath<Sprite>(path);
+    }
+
+    // Devuelve el primer sprite (Frame_0) de un .ase importado.
+    static Sprite LoadAseSprite(string path)
+    {
+        var all = AssetDatabase.LoadAllAssetsAtPath(path);
+        Sprite first = null;
+        foreach (var a in all)
+        {
+            if (a is Sprite s)
+            {
+                if (s.name == "Frame_0") return s;
+                if (first == null) first = s;
+            }
+        }
+        return first;
     }
 
     static Sprite LoadFirstSprite(params string[] paths)

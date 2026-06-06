@@ -24,6 +24,10 @@ public class HUDManager : MonoBehaviour
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
     private static void Bootstrap()
     {
+        // No mostrar el HUD en el menú principal.
+        var sceneName = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
+        if (sceneName == "MainMenu") return;
+
         // Si ya hay un HUD colocado en la escena, no creamos otro.
         if (FindFirstObjectByType<HUDManager>() != null) return;
         var go = new GameObject("HUD");
