@@ -30,6 +30,9 @@ public class RuneRevealTracker : MonoBehaviour
 
         _armed = enemies != null && enemies.Count > 0;
         SetVisible(_armed ? false : revealIfEmpty);
+
+        Debug.Log($"[RuneReveal] '{name}' vigilando {(enemies != null ? enemies.Count : 0)} enemigos. " +
+                  $"armed={_armed}. (Si armed=False, no se le asignaron enemigos: revisa tags 'Enemy' y vuelve a correr la herramienta.)");
     }
 
     private void Update()

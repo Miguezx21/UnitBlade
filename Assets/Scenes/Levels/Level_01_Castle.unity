@@ -15745,7 +15745,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 500100001}
-  - component: {fileID: 500100009}
   m_Layer: 0
   m_Name: Enemies
   m_TagString: Untagged
@@ -15776,20 +15775,6 @@ Transform:
   - {fileID: 776459491}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &500100009
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 500100000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1da0000000000000000000000000004a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  runeToReveal: {fileID: 810100000}
-  enemies: []
 --- !u!1 &511100000
 GameObject:
   m_ObjectHideFlags: 0
@@ -17027,13 +17012,14 @@ GameObject:
   - component: {fileID: 810100003}
   - component: {fileID: 810100004}
   - component: {fileID: 810100005}
+  - component: {fileID: 810100006}
   m_Layer: 0
   m_Name: Runa_Pira
   m_TagString: Collectible
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &810100001
 Transform:
   m_ObjectHideFlags: 0
@@ -17185,6 +17171,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   runeId: Pira
+--- !u!114 &810100006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 810100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a02365aad44cc8e48a02151accf80799, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RuneRevealTracker
+  enemies:
+  - {fileID: 511100000}
+  - {fileID: 521100000}
+  - {fileID: 531100000}
+  - {fileID: 776459490}
+  - {fileID: 1632596542}
+  - {fileID: 2044207752}
+  revealIfEmpty: 0
 --- !u!1 &830100000
 GameObject:
   m_ObjectHideFlags: 0
@@ -19897,13 +19903,14 @@ GameObject:
   - component: {fileID: 2046311491}
   - component: {fileID: 2046311490}
   - component: {fileID: 2046311489}
+  - component: {fileID: 2046311494}
   m_Layer: 0
   m_Name: Runa_Steinn
   m_TagString: Collectible
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &2046311489
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20055,6 +20062,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2046311494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2046311488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a02365aad44cc8e48a02151accf80799, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RuneRevealTracker
+  enemies:
+  - {fileID: 1294049222}
+  - {fileID: 1689518539}
+  revealIfEmpty: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
