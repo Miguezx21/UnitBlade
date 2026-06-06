@@ -16,6 +16,10 @@ public class PlayerController2D : MonoBehaviour
     [Header("Daño / Rebote")]
     public float bounceForce = 6f;
 
+    [Header("Caída al vacío")]
+    [Tooltip("Si Kaelen cae por debajo de esta Y, pierde una vida y reaparece.")]
+    public float fallLimitY = -15f;
+
     private Rigidbody2D _rb;
     private SpriteRenderer _sr;
     private PlayerAnimator _animCtrl;
@@ -27,6 +31,7 @@ public class PlayerController2D : MonoBehaviour
     public bool Dead { get; private set; }
 
     private float _coyoteTimer;
+    private Vector3 _spawnPos;
 
     private void Awake()
     {
@@ -34,11 +39,19 @@ public class PlayerController2D : MonoBehaviour
         _sr = GetComponent<SpriteRenderer>();
         _animCtrl = GetComponent<PlayerAnimator>();
         _col = GetComponent<Collider2D>();
+
+        // Punto de reaparición: el SpawnPoint de la escena, o la posición inicial.
+        var sp = GameObject.Find("SpawnPoint");
+        _spawnPos = sp != null ? sp.transform.position : transform.position;
     }
 
     private void Update()
     {
         if (Dead) return;
+
+        // ── Caída al vacío: pierde una vida y reaparece (o game over) ──
+        if (transform.position.y < fallLimitY)
+            OnFell();
 
         if (PlayerStats.Instance != null && PlayerStats.Instance.CurrentLives <= 0)
         {
@@ -143,6 +156,21 @@ public class PlayerController2D : MonoBehaviour
     public void SetAtacando(bool value)
     {
         _attacking = value;
+    }
+
+    private void OnFell()
+    {
+        if (PlayerStats.Instance != null)
+            PlayerStats.Instance.TakeDamage();
+
+        bool alive = PlayerStats.Instance == null || PlayerStats.Instance.CurrentLives > 0;
+        if (alive)
+        {
+            // Reaparece en el spawn con velocidad cero.
+            transform.position = _spawnPos;
+            _rb.linearVelocity = Vector2.zero;
+        }
+        // Si murió, el chequeo de vidas en Update llamará a Die() (game over).
     }
 
     private void Die()
