@@ -15576,6 +15576,7 @@ MonoBehaviour:
     m_Bits: 768
   coyoteTime: 0.15
   bounceForce: 6
+  fallLimitY: -15
 --- !u!114 &420100008
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17188,8 +17189,6 @@ MonoBehaviour:
   - {fileID: 521100000}
   - {fileID: 531100000}
   - {fileID: 776459490}
-  - {fileID: 1632596542}
-  - {fileID: 2044207752}
   revealIfEmpty: 0
 --- !u!1 &830100000
 GameObject:
@@ -20076,7 +20075,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::RuneRevealTracker
   enemies:
   - {fileID: 1294049222}
+  - {fileID: 1632596542}
   - {fileID: 1689518539}
+  - {fileID: 2044207752}
   revealIfEmpty: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
