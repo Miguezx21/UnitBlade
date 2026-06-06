@@ -32,6 +32,7 @@ public class PlayerAttack : MonoBehaviour
     {
         _lastAttack = Time.time;
         _animCtrl?.SetAttacking(true);
+        AudioManager.Instance?.Sword();
         Invoke(nameof(EndAttack), 0.35f);   // duración del clip Attack
 
         float dir = (_sr != null && _sr.flipX) ? -1f : 1f;
