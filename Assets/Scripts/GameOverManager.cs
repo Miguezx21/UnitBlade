@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -19,6 +20,7 @@ public class GameOverManager : MonoBehaviour
     private Canvas    _canvas;
     private CanvasGroup _panel;
     private bool _triggered;
+    private bool _menuActive; // panel visible y aceptando entrada
 
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
     private static void Bootstrap()
@@ -42,12 +44,25 @@ public class GameOverManager : MonoBehaviour
     private void OnSceneLoaded(Scene s, LoadSceneMode m)
     {
         _triggered = false;
+        _menuActive = false;
         if (_panel != null)
         {
             _panel.alpha          = 0f;
             _panel.interactable   = false;
             _panel.blocksRaycasts = false;
         }
+    }
+
+    private void Update()
+    {
+        // Fallback de teclado: si el panel está activo, Enter/Espacio = Reintentar.
+        if (!_menuActive) return;
+        var kb = Keyboard.current;
+        if (kb == null) return;
+        if (kb.enterKey.wasPressedThisFrame
+            || kb.numpadEnterKey.wasPressedThisFrame
+            || kb.spaceKey.wasPressedThisFrame)
+            OnRestart();
     }
 
     // ── API pública ────────────────────────────────────────
@@ -75,14 +90,26 @@ public class GameOverManager : MonoBehaviour
 
         _panel.interactable   = true;
         _panel.blocksRaycasts = true;
+        _menuActive = true; // habilita clic y teclado (Enter/Espacio)
     }
 
     // ── Botones ────────────────────────────────────────────
 
     public void OnRestart()
     {
+        _menuActive = false;
         if (PlayerStats.Instance != null) PlayerStats.Instance.Revive();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void OnMenu()
+    {
+        _menuActive = false;
+        if (PlayerStats.Instance != null) PlayerStats.Instance.Revive();
+        if (Application.CanStreamedLevelBeLoaded("MainMenu"))
+            SceneManager.LoadScene("MainMenu");
+        else
+            SceneManager.LoadScene(0);
     }
 
     // ── UI generada en runtime ─────────────────────────────
@@ -125,26 +152,39 @@ public class GameOverManager : MonoBehaviour
         txtRt.sizeDelta = new Vector2(600, 100);
         txtRt.anchoredPosition = Vector2.zero;
 
-        // Botón Reintentar
-        MakeButton(panelGO.transform, "Reintentar", new Vector2(0.5f, 0.4f), OnRestart);
+        // Botones
+        MakeButton(panelGO.transform, "Reintentar", new Vector2(0.5f, 0.42f), OnRestart);
+        MakeButton(panelGO.transform, "Menú Principal", new Vector2(0.5f, 0.30f), OnMenu);
+
+        // Pista de teclado
+        var hintGO = new GameObject("Hint");
+        hintGO.transform.SetParent(panelGO.transform, false);
+        var hint = hintGO.AddComponent<Text>();
+        hint.text = "(Enter o Espacio para reintentar)";
+        hint.font = Resources.GetBuiltinResource<Font>("LegacyRuntime.ttf");
+        hint.fontSize = 22;
+        hint.alignment = TextAnchor.MiddleCenter;
+        hint.color = new Color(0.8f, 0.8f, 0.8f);
+        var hrt = hint.rectTransform;
+        hrt.anchorMin = hrt.anchorMax = new Vector2(0.5f, 0.18f);
+        hrt.pivot = new Vector2(0.5f, 0.5f);
+        hrt.sizeDelta = new Vector2(600, 40);
+        hrt.anchoredPosition = Vector2.zero;
 
         // Oculto al inicio
         _panel.alpha          = 0f;
         _panel.interactable   = false;
         _panel.blocksRaycasts = false;
 
-        // EventSystem necesario para que los botones respondan
+        // EventSystem necesario para que los botones respondan (clic de ratón).
         if (FindFirstObjectByType<EventSystem>() == null)
         {
             var es = new GameObject("EventSystem");
             es.AddComponent<EventSystem>();
-            // Agrega el módulo correcto según el Input System activo
-            var moduleType = System.Type.GetType(
-                "UnityEngine.InputSystem.UI.InputSystemUIInputModule, Unity.InputSystem");
-            if (moduleType != null)
-                es.AddComponent(moduleType);
-            else
-                es.AddComponent<StandaloneInputModule>();
+            var module = es.AddComponent<UnityEngine.InputSystem.UI.InputSystemUIInputModule>();
+            // Asignar las acciones por defecto (si no, el clic no registra en runtime).
+            var mi = module.GetType().GetMethod("AssignDefaultActions");
+            if (mi != null) mi.Invoke(module, null);
             DontDestroyOnLoad(es);
         }
     }
