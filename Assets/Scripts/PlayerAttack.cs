@@ -32,7 +32,6 @@ public class PlayerAttack : MonoBehaviour
     {
         _lastAttack = Time.time;
         _animCtrl?.SetAttacking(true);
-        AudioManager.Instance?.Sword();
         Invoke(nameof(EndAttack), 0.35f);   // duración del clip Attack
 
         float dir = (_sr != null && _sr.flipX) ? -1f : 1f;
@@ -41,6 +40,10 @@ public class PlayerAttack : MonoBehaviour
         var elem = PlayerStats.Instance != null
             ? PlayerStats.Instance.CurrentElement
             : ElementType.Pira;
+
+        // Sonido: espada (golpe físico) + efecto del elemento activo.
+        AudioManager.Instance?.Sword();
+        AudioManager.Instance?.ElementAttack(elem);
 
         foreach (var h in Physics2D.OverlapCircleAll(center, range * 0.6f))
         {

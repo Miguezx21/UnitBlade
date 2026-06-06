@@ -159,14 +159,14 @@ public class MainMenuController : MonoBehaviour
         title.fontStyle = FontStyle.Bold;
         Anchor(title.rectTransform, new Vector2(0.5f, 1f), new Vector2(0, -70), new Vector2(1400, 90));
 
-        var content = ScrollArea(panel.transform, out RectTransform contentRT);
+        ScrollArea(panel.transform, out RectTransform contentRT);
         var txt = NewText(contentRT, "Body", body, 34, Color.white);
         txt.alignment = TextAnchor.UpperLeft;
         var rt = txt.rectTransform;
         rt.anchorMin = new Vector2(0, 1); rt.anchorMax = new Vector2(1, 1); rt.pivot = new Vector2(0.5f, 1);
         rt.offsetMin = new Vector2(40, 0); rt.offsetMax = new Vector2(-40, 0);
         var fitter = txt.gameObject.AddComponent<ContentSizeFitter>();
-        fitter.verticalFit = ContentSizeFitter.Fit.PreferredSize;
+        fitter.verticalFit = ContentSizeFitter.FitMode.PreferredSize;
         FitContent(contentRT, txt);
 
         MakeButton(panel.transform, "VOLVER", -60, () => Back(panel), fromBottom: true);
@@ -180,13 +180,13 @@ public class MainMenuController : MonoBehaviour
         title.fontStyle = FontStyle.Bold;
         Anchor(title.rectTransform, new Vector2(0.5f, 1f), new Vector2(0, -70), new Vector2(1400, 90));
 
-        var content = ScrollArea(panel.transform, out RectTransform contentRT);
-        var vlg = content.AddComponent<VerticalLayoutGroup>();
+        ScrollArea(panel.transform, out RectTransform contentRT);
+        var vlg = contentRT.gameObject.AddComponent<VerticalLayoutGroup>();
         vlg.spacing = 30; vlg.padding = new RectOffset(40, 40, 20, 40);
         vlg.childControlHeight = true; vlg.childControlWidth = true;
         vlg.childForceExpandHeight = false; vlg.childForceExpandWidth = true;
-        var csf = content.AddComponent<ContentSizeFitter>();
-        csf.verticalFit = ContentSizeFitter.Fit.PreferredSize;
+        var csf = contentRT.gameObject.AddComponent<ContentSizeFitter>();
+        csf.verticalFit = ContentSizeFitter.FitMode.PreferredSize;
 
         Sprite[] icons = { runeThron, runePira, runeIsa, runeSteinn };
         for (int i = 0; i < RUNES.Length; i++)

@@ -83,6 +83,7 @@ public class PlayerController2D : MonoBehaviour
                         _rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
                         _coyoteTimer = 0f;
                         _animCtrl?.OnJump();
+                        AudioManager.Instance?.Jump();
                     }
                 }
             }

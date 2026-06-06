@@ -16,9 +16,11 @@ public class AudioManager : MonoBehaviour
 
     [Header("Efectos")]
     public AudioClip sfxSword;
-    public AudioClip sfxFire;
-    public AudioClip sfxIce;
-    public AudioClip sfxLightning;
+    public AudioClip sfxJump;
+    public AudioClip sfxFire;       // Pira
+    public AudioClip sfxIce;        // Isa
+    public AudioClip sfxRock;       // Steinn
+    public AudioClip sfxLightning;  // Thorn
     public AudioClip sfxParry;
 
     [Header("Volúmenes")]
@@ -71,8 +73,22 @@ public class AudioManager : MonoBehaviour
 
     // Atajos cómodos para los scripts de gameplay.
     public void Sword()     => PlaySfx(sfxSword);
+    public void Jump()      => PlaySfx(sfxJump);
     public void Fire()      => PlaySfx(sfxFire);
     public void Ice()       => PlaySfx(sfxIce);
+    public void Rock()      => PlaySfx(sfxRock);
     public void Lightning() => PlaySfx(sfxLightning);
     public void Parry()     => PlaySfx(sfxParry);
+
+    /// <summary>Reproduce el sonido del ataque según el elemento activo.</summary>
+    public void ElementAttack(ElementType e)
+    {
+        switch (e)
+        {
+            case ElementType.Pira:   Fire();      break;
+            case ElementType.Isa:    Ice();       break;
+            case ElementType.Steinn: Rock();      break;
+            case ElementType.Thorn:  Lightning(); break;
+        }
+    }
 }

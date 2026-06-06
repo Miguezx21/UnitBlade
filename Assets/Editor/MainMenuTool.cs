@@ -36,8 +36,10 @@ public static class MainMenuTool
         var audioGO = new GameObject("AudioManager");
         var audio = audioGO.AddComponent<AudioManager>();
         audio.sfxSword     = LoadClip("Assets/Sounds/MINECRAFT SWORD SOUND EFFECT - FREE.mp3");
+        audio.sfxJump      = LoadClip("Assets/Sounds/Roblox jump Sound effect.mp3");
         audio.sfxFire      = LoadClip("Assets/Sounds/Fire Explosion Sound effect  Fire Blast Sound Effect #3 @WsnSolutions.mp3");
         audio.sfxIce       = LoadClip("Assets/Sounds/Ice Crack Freeze Sound Effect.mp3");
+        audio.sfxRock      = LoadClip("Assets/Sounds/ROCKS AND STONES IMPACT - (Sound Effect).mp3");
         audio.sfxLightning = LoadClip("Assets/Sounds/Lightning sound  thunder and lightning sound effects.mp3");
         audio.sfxParry     = LoadClip("Assets/Sounds/Parry Sound Effects.mp3");
         // menuMusic / levelMusic / bossMusic se asignan cuando cargues las pistas.
